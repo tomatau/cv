@@ -1,0 +1,36 @@
+:root {
+  /* colours */
+  --clr-container: oklch(1 0 0);
+  --clr-sidebar: oklch(0.94 0 0);
+  --clr-foreground: oklch(36% 0.00004 271.152);
+  --clr-foreground-active: oklch(52% 0.00004 271.152);
+  --clr-heading: oklch(44.417% 0.08852 257.745);
+  --clr-heading-muted: oklch(from var(--clr-sub-heading) calc(l - 0.05) c h);
+  --clr-sub-heading: oklch(55.875% 0.00336 264.664);
+  --clr-decoration-muted: oklch(62.315% 0.01113 267.341);
+  --clr-decoration-pop: oklch(
+    from var(--clr-heading) calc(l + 0.2) calc(c + 0.05) h / 0.6
+  );
+  --clr-name: oklch(0.5 0.1 258.86);
+
+  /* layout */
+  --page-width: 210mm;
+  --headings-width: 4cm;
+  --sidebar-width: 5.6cm;
+  --details-width: calc(
+    var(--page-width) - (var(--headings-width) + var(--sidebar-width))
+  );
+  --section-group-gap: 1.2em;
+
+  /* spacing */
+  --page-top-padding: 0.4cm;
+
+  /* typograph */
+  --base-font-family: 'Avenir Next', sans-serif;
+  --header-font-family: 'Avenir Next', sans-serif;
+  --base-font-size: 10pt;
+  --header-font-size: calc(var(--base-font-size) * 2);
+  --sub-header-font-size: calc(var(--header-font-size) * 0.4);
+  --attention-font-size: calc(var(--header-font-size) * 0.6);
+  --wide-spacing: 0.05rem;
+}

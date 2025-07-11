@@ -1,0 +1,57 @@
+@layer layout {
+  .section {
+    display: grid;
+    grid-template: 'headings details';
+    align-items: baseline;
+  }
+
+  .headings {
+    grid-area: headings;
+    width: var(--headings-width);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .details {
+    grid-area: details;
+    padding-right: 0.5rem;
+    width: var(--details-width);
+  }
+
+  .content {
+    .section {
+      justify-content: end;
+    }
+
+    .details {
+      padding-left: 12px;
+      padding-top: 0.8rem;
+    }
+  }
+
+  .section-group {
+    margin-top: 2.4rem;
+    position: absolute;
+
+    + .section,
+    + .icon-decoration {
+      margin-top: calc(
+        var(--section-group-gap) - (var(--base-font-size) * 0.5)
+      );
+    }
+  }
+}
+
+@layer components {
+  :nth-child(1 of .section) {
+    .details {
+      padding-top: 0.4rem;
+    }
+  }
+
+  .details {
+    &.main-heading {
+      padding-top: var(--page-top-padding);
+    }
+  }
+}

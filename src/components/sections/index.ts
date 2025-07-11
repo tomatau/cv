@@ -1,0 +1,7 @@
+export * from './education.section'
+export * from './expertise.section'
+export * from './interests.section'
+export * from './personal-details.section'
+export * from './professional-experience.section'
+export * from './skills.section'
+export * from './social.section'

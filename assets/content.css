@@ -1,0 +1,10 @@
+@layer layout {
+  .content {
+    grid-area: content;
+    margin: 0 auto;
+    padding: 0 0 2.5rem;
+    width: var(--page-width) - var(--sidebar-width);
+    background-color: var(--clr-container);
+    min-height: 100vh;
+  }
+}

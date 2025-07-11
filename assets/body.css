@@ -1,0 +1,13 @@
+@layer base {
+  body {
+    background-color: black;
+  }
+}
+
+@layer layout {
+  body {
+    display: grid;
+    grid-template: 'content sidebar';
+    justify-content: center;
+  }
+}

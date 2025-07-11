@@ -1,0 +1,23 @@
+@layer reset, base, layout, components;
+
+@import './body.css';
+@import './content.css';
+@import './decorations.css';
+@import './establishment.css';
+@import './lists.css';
+@import './reset.css';
+@import './section.css';
+@import './sidebar.css';
+@import './typography.css';
+@import './vars.css';
+
+@page {
+  size: A4 portrait;
+  margin: 100mm 0 100mm 0;
+}
+
+@media print {
+  * {
+    print-color-adjust: exact;
+  }
+}

@@ -1,0 +1,49 @@
+@layer components {
+  .list {
+    padding-right: 0.5rem;
+  }
+
+  .details,
+  .list {
+    ul {
+      padding-inline-start: 1em;
+      list-style-type: '⊙ ';
+      font-size: var(--base-font-size);
+
+      ::marker {
+        color: var(--clr-heading);
+      }
+
+      li {
+        ul {
+          list-style-type: disc;
+        }
+      }
+    }
+  }
+
+  ul.inline-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    gap: 0.25rem;
+    font-size: 5px !important;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    border-bottom: 1px solid var(--clr-sidebar);
+    padding-bottom: 0.5rem;
+
+    li {
+      span {
+        word-break: keep-all;
+        color: var(--clr-foreground-active);
+        background: oklch(
+          from var(--clr-decoration-muted) calc(l + 0.35) calc(c - 1) h
+        );
+        text-transform: lowercase;
+        padding: 0 0.25rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}

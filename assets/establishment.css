@@ -1,0 +1,14 @@
+@layer components {
+  .establishment {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .establishment-size {
+    color: var(--clr-foreground-active);
+    font-size: small;
+    background: oklch(from var(--clr-decoration-muted) calc(l + 0.35) c h);
+    padding: 0 0.4rem;
+    border-radius: 5px;
+  }
+}

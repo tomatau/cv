@@ -1,0 +1,76 @@
+@layer base {
+  body {
+    font-family: var(--base-font-family);
+    color: var(--clr-foreground);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--header-font-family);
+  }
+
+  h1 {
+    color: var(--clr-heading);
+  }
+
+  h1 {
+    font-size: var(--header-font-size);
+    letter-spacing: var(--wide-spacing);
+  }
+
+  h2,
+  h3 {
+    color: var(--clr-sub-heading);
+    font-size: var(--sub-header-font-size);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-weight: 600;
+    color: var(--clr-heading-muted);
+    font-size: small;
+  }
+
+  a {
+    color: var(--clr-foreground);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--clr-foreground-active);
+    text-decoration: underline;
+  }
+
+  p {
+    font-size: var(--base-font-size);
+  }
+}
+
+@layer components {
+  h1::first-letter {
+    initial-letter: 1.2 2;
+    margin-top: -8px;
+  }
+
+  .attention {
+    color: var(--clr-heading);
+    font-family: var(--header-font-family);
+    font-size: var(--attention-font-size);
+    font-weight: bold;
+  }
+
+  .establishment {
+    color: var(--clr-name);
+    letter-spacing: var(--wide-spacing);
+  }
+
+  .section-group h2 {
+    font-family: 'Operator Mono', monospace;
+    text-transform: capitalize;
+    font-weight: 300;
+    writing-mode: sideways-lr;
+  }
+}
