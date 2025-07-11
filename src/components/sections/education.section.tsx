@@ -15,11 +15,19 @@ export function Education() {
       {education.map((edu, index) => (
         <div className='section decorated' key={index}>
           <div className='headings'>
-            <h3 className='dot'>{edu.period}</h3>
+            <h3 className='dot'>
+              <span>{edu.period.from}</span>
+              {edu.period.to && (
+                <>
+                  &mdash;
+                  <span>{edu.period.to}</span>
+                </>
+              )}
+            </h3>
           </div>
           <div className='details'>
             {edu.qualifications.map((qual, idx) => (
-              <h4 key={idx}>{qual}</h4>
+              <h4 key={idx}>{qual.text}</h4>
             ))}
             <p className='establishment'>{edu.establishment}</p>
           </div>
