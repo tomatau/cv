@@ -13,3 +13,7 @@ To save a PDF version:
 1. open in a browser
 2. print page
 3. save as PDF
+
+## Sample
+
+[thomas-hudspith-tatham_lead-engineer.pdf](./thomas-hudspith-tatham_lead-engineer.pdf)
