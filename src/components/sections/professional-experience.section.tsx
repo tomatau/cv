@@ -23,6 +23,7 @@ export function ProfessionalExperience() {
   const filteredBySkills = useFilterSkills(professionalExperience, item =>
     item.skills.map(skillD => skillD.text)
   )
+  const filteredExhaustive = useFilterExhaustive(filteredBySkills)
   return (
     <div className='segment' data-segment='professional-experience'>
       <div className='section-group'>
@@ -33,7 +34,7 @@ export function ProfessionalExperience() {
           <Briefcase size={20} />
         </div>
       </div>
-      {filteredBySkills.map((pE, idx) => {
+      {filteredExhaustive.map((pE, idx) => {
         const showDetailedResponsibilities =
           controls.exhaustive === Exhaustive.exhaustive || idx < 2
         return (

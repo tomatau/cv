@@ -24,13 +24,13 @@
 }
 
 @layer components {
-  /* .segment:nth-child(odd) {
+  .segment:nth-child(even) {
     .headings {
       --clr-decoration-pop: oklch(
-        from var(--clr-heading) calc(l + 0.3) calc(c - 0.05) h
+        from var(--clr-heading) calc(l + 0.2) calc(c + 0.05) h / 1
       );
     }
-  } */
+  }
 
   .icon-decoration {
     margin-top: 0.6rem;
@@ -61,14 +61,6 @@
       position: absolute;
       right: -0.65rem;
       top: 0.4rem;
-    }
-  }
-
-  [data-segment='professional-experience'] {
-    .headings {
-      --clr-decoration-pop: oklch(
-        from var(--clr-heading) calc(l + 0.2) calc(c + 0.05) h / 1
-      );
     }
   }
 }

@@ -2,6 +2,7 @@ import { SkillDetail } from './skills.content'
 import { DetailNode, Exhaustive, Period, Skills } from './types'
 
 type ProfessionalExperience = {
+  exhaustive?: Exhaustive.exhaustive
   period: Period
   role: string
   establishment: {
@@ -26,7 +27,13 @@ const dendra: ProfessionalExperience = {
   },
   responsibilities: [
     {
-      text: `Lead product development of the customer facing rebrand - slicing and scoping work - resulting in significant upscales and retention.`,
+      text: `Lead product development of the customer facing rebrand resulting in significant upscales and retention.`,
+      children: [
+        {
+          text: 'Responsible for scoping, discovery, technical strategy, success measures and documentation',
+          exhaustive: Exhaustive.exhaustive,
+        },
+      ],
     },
     {
       text: `A key engineer within a medium sized start-up:`,
@@ -208,6 +215,7 @@ const thinkfulWriter: ProfessionalExperience = {
 }
 
 const just: ProfessionalExperience = {
+  exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Nov 2017`,
     to: `May 2018`,
@@ -408,6 +416,7 @@ const thinkfulLead: ProfessionalExperience = {
 }
 
 const metail: ProfessionalExperience = {
+  exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Feb 2014`,
     to: `Mar 2014`,
@@ -510,6 +519,7 @@ const austnews: ProfessionalExperience = {
 }
 
 const catalyst: ProfessionalExperience = {
+  exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Jan 2012`,
     to: `Feb 2012`,
@@ -538,6 +548,7 @@ const catalyst: ProfessionalExperience = {
 }
 
 const brainWire: ProfessionalExperience = {
+  exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Feb 2011`,
     to: `Jul 2011`,
@@ -573,6 +584,7 @@ const brainWire: ProfessionalExperience = {
 }
 
 const fullPhatDesign: ProfessionalExperience = {
+  exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Apr 2010`,
     to: `Sep 2010`,
@@ -607,6 +619,7 @@ const fullPhatDesign: ProfessionalExperience = {
 }
 
 const gnb: ProfessionalExperience = {
+  exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Jul 2009`,
     to: `Apr 2010`,
@@ -630,6 +643,7 @@ const gnb: ProfessionalExperience = {
 }
 
 const jda: ProfessionalExperience = {
+  exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Sep 2008`,
     to: `Dec 2008`,
