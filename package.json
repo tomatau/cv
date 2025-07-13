@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "bun build --outfile=dist/client.js src/client.tsx --production",
+    "build": "bun build --outfile=dist/assets/client.js src/client.tsx --production",
     "dev": "bun --hot run src/index.tsx",
     "start": "bun run src/index.tsx",
     "ssg": "bun run ./scripts/static-site-generator.ts"
