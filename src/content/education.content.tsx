@@ -1,22 +1,49 @@
-export const education = [
+import { ReactNode } from 'react'
+import { DetailNode, Period, Tags, Exhaustive, Skills } from './types'
+
+type Education = {
+  period: Period
+  establishment: ReactNode
+  qualifications: DetailNode[]
+  skills?: Skills[]
+}
+
+export const education: Education[] = [
   {
-    // period: <>2004 &mdash; 2008</>,
     period: {
       from: '2004',
       to: '2008',
     },
-    qualifications: [{ text: 'Computing with Networks BSc (Hons)' }],
     establishment: 'Sheffield Hallam University',
+    qualifications: [{ text: 'Computing with Networks BSc (Hons)' }],
+    skills: [
+      Skills.architecture,
+      Skills.css,
+      Skills.documentation,
+      Skills.html,
+      Skills.java,
+      Skills.javaScript,
+      Skills.mySql,
+      Skills.owasp,
+      Skills.wcag,
+    ],
   },
   {
-    // period: '2024',
     period: {
       from: '2024',
     },
+    establishment: 'Coursera',
     qualifications: [
       { text: 'Machine Learning Specialisation' },
       { text: 'Deep Learning Specialisation' },
     ],
-    establishment: 'Coursera',
+    skills: [
+      Skills.machineLearning,
+      Skills.aiEngineering,
+      Skills.deepLearning,
+      Skills.python,
+      Skills.pandas,
+      Skills.numpy,
+    ],
   },
 ]

@@ -1,4 +1,12 @@
-export const expertise = [
+import { ReactNode } from 'react'
+import { DetailNode } from './types'
+
+type Expertise = {
+  heading: ReactNode
+  details: DetailNode[]
+}
+
+export const expertise: Expertise[] = [
   {
     heading: 'Leadership',
     details: [

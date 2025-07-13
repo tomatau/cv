@@ -1,6 +1,8 @@
 import { desiredPosition, personalDetails } from '../../content'
+import { useControlsContext } from '../../controls'
 
 export function PersonalDetails() {
+  const controls = useControlsContext()
   return (
     <div className='segment' data-segment='personal-details'>
       <div className='section'>
@@ -13,7 +15,9 @@ export function PersonalDetails() {
           <h2>Desired Position</h2>
         </div>
         <div className='details'>
-          <p className='attention'>{desiredPosition.position}</p>
+          <p className='attention'>
+            {controls.position || desiredPosition.position}
+          </p>
         </div>
       </div>
     </div>

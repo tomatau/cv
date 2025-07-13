@@ -32,14 +32,13 @@
     margin: 0.5rem 0 0;
     border-bottom: 1px solid var(--clr-sidebar);
     padding-bottom: 0.5rem;
+    min-height: 1rem;
 
     li {
       span {
         word-break: keep-all;
         color: var(--clr-foreground-active);
-        background: oklch(
-          from var(--clr-decoration-muted) calc(l + 0.35) calc(c - 1) h
-        );
+        background: oklch(from var(--clr-decoration-muted) calc(l + 0.35) c h);
         text-transform: lowercase;
         padding: 0 0.25rem;
         border-radius: 0.5rem;

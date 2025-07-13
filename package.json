@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev": "bun --hot run src/index.tsx",
+    "start": "bun run src/index.tsx"
+  },
   "dependencies": {
     "@types/bun": "^1.2.18",
     "lucide-react": "^0.525.0",

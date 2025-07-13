@@ -1,0 +1,9 @@
+@layer utilities {
+  .bold {
+    font-weight: 500;
+  }
+
+  .super-bold {
+    font-weight: 700;
+  }
+}

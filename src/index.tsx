@@ -1,6 +1,8 @@
 import { renderToReadableStream } from 'react-dom/server'
 import { CV } from './components/cv'
 
+const ASSET_DIR = '/assets'
+
 Bun.serve({
   port: 9001,
   routes: {
@@ -11,12 +13,25 @@ Bun.serve({
         headers: { 'Content-Type': 'text/html' },
       })
     },
-    '/assets/*': async req => {
+    [`${ASSET_DIR}/*`]: async req => {
       const url = new URL(req.url)
-      const assetPath = url.pathname.replace('/assets/', './assets/')
+
+      if (url.pathname === `${ASSET_DIR}/client.js`) {
+        await Bun.build({
+          entrypoints: ['./src/client.tsx'],
+          outdir: `.${ASSET_DIR}`,
+          naming: '[name].js',
+        })
+      }
+
+      const assetPath = url.pathname.replace(`${ASSET_DIR}/`, `.${ASSET_DIR}/`)
       const asset = await Bun.file(assetPath).arrayBuffer()
       return new Response(asset, {
-        headers: { 'Content-Type': 'text/css' },
+        headers: {
+          'Content-Type': url.pathname.endsWith('.js')
+            ? 'text/javascript'
+            : 'text/css',
+        },
       })
     },
   },

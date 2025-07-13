@@ -1,8 +1,28 @@
 import { Briefcase } from 'lucide-react'
-import { professionalExperience } from '../../content'
+import { professionalExperience, Exhaustive, SkillDetail } from '../../content'
+import { useControlsContext } from '../../controls'
+import { useFilterSkills } from '../../use-filter-skills.hook'
 import { NodeList } from '../node-list'
+import { useFilterExhaustive } from '../../use-filter-exhaustive.hook'
+
+function SkillList({ skills }: { skills: SkillDetail[] }) {
+  const filteredSkills = useFilterExhaustive(skills)
+  return (
+    <ul className='inline-list'>
+      {filteredSkills.map(skill => (
+        <li key={skill.text}>
+          <span className='skill'>{skill.text}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 export function ProfessionalExperience() {
+  const controls = useControlsContext()
+  const filteredBySkills = useFilterSkills(professionalExperience, item =>
+    item.skills.map(skillD => skillD.text)
+  )
   return (
     <div className='segment' data-segment='professional-experience'>
       <div className='section-group'>
@@ -13,8 +33,9 @@ export function ProfessionalExperience() {
           <Briefcase size={20} />
         </div>
       </div>
-      {professionalExperience.map((pE, idx) => {
-        const showDetailedResponsibilities = idx < 2
+      {filteredBySkills.map((pE, idx) => {
+        const showDetailedResponsibilities =
+          controls.exhaustive === Exhaustive.exhaustive || idx < 2
         return (
           <div className='section decorated' key={pE.establishment.name}>
             <div className='headings'>
@@ -48,13 +69,7 @@ export function ProfessionalExperience() {
               {showDetailedResponsibilities && (
                 <NodeList list={pE.responsibilities} />
               )}
-              <ul className='inline-list'>
-                {pE.skills.map(skill => (
-                  <li key={skill.text}>
-                    <span className='skill'>{skill.text}</span>
-                  </li>
-                ))}
-              </ul>
+              <SkillList skills={pE.skills} />
             </div>
           </div>
         )

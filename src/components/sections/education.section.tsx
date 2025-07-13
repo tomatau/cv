@@ -1,7 +1,12 @@
 import { GraduationCap } from 'lucide-react'
 import { education } from '../../content'
+import { useFilterSkills } from '../../use-filter-skills.hook'
 
 export function Education() {
+  const filteredEducation = useFilterSkills(
+    education,
+    content => content.skills || []
+  )
   return (
     <div className='segment' data-segment='education'>
       <div className='section-group'>
@@ -12,7 +17,7 @@ export function Education() {
           <GraduationCap size={20} />
         </div>
       </div>
-      {education.map((edu, index) => (
+      {filteredEducation.map((edu, index) => (
         <div className='section decorated' key={index}>
           <div className='headings'>
             <h3 className='dot'>

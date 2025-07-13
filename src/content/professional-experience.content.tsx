@@ -1,3 +1,5 @@
+import { Exhaustive, Skills } from './types'
+
 const dendra = {
   period: {
     start: `Apr 2024`,
@@ -30,14 +32,34 @@ const dendra = {
     },
   ],
   skills: [
-    { text: 'Technical strategy', keySkill: true },
-    { text: 'TypeScript', keySkill: true },
-    { text: 'Angular', keySkill: true },
-    { text: 'Django', keySkill: true },
-    { text: 'CSS', keySkill: true },
-    { text: 'ElasticSearch', keySkill: true },
-    { text: 'Docker', keySkill: true },
-    { text: 'Cypress', keySkill: true },
+    { text: Skills.advancedTesting, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.angular },
+    { text: Skills.architecture, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.aws, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.bash, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.bem },
+    { text: Skills.continuousIntegration, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.css, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.cypress },
+    { text: Skills.designSystems },
+    { text: Skills.django },
+    { text: Skills.docker },
+    { text: Skills.elasticSearch },
+    { text: Skills.git, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.gitHub, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.jest, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.jira, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.postgreSql, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.python },
+    { text: Skills.redis, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.rest, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.rx },
+    { text: Skills.scrum, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.scss },
+    { text: Skills.technicalStrategy },
+    { text: Skills.typeScript },
+    { text: Skills.webpack, exhaustive: Exhaustive.exhaustive },
   ],
 }
 
@@ -73,13 +95,54 @@ const beamery = {
     },
   ],
   skills: [
-    { text: 'Technical strategy', keySkill: true },
-    { text: 'TypeScript', keySkill: true },
-    { text: 'React', keySkill: true },
-    { text: 'Node.js', keySkill: true },
-    { text: 'WCAG 2.1 Accessibility', keySkill: true },
-    { text: 'Design Systems expert', keySkill: true },
-    { text: 'Docker', keySkill: true },
+    { text: Skills.advancedTesting, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.architecture, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.bash, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.continuousIntegration, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.crossFunctionalLead, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.css, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.cypress, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.designSystems },
+    { text: Skills.docker },
+    { text: Skills.documentation, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.elasticSearch, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.fastify, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.gcp, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.git, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.golang, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.graphQl },
+    { text: Skills.grpc, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.internationalisation, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.jest, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.jira, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.kanban, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.kubernetes, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.mentoring, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.microFrontends, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.microservices, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.mocha, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.mongoDb },
+    { text: Skills.monorepos, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.nest, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.next },
+    { text: Skills.node },
+    { text: Skills.nx, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.observability, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.owasp, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.playwright, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.protobuf, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.rag, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.react },
+    { text: Skills.redux, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.rest, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.scrum },
+    { text: Skills.swagger, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.tdd, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.technicalStrategy },
+    { text: Skills.typeScript },
+    { text: Skills.vite, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.wcag },
   ],
 }
 
@@ -104,14 +167,23 @@ const thinkfulWriter = {
   ],
 
   skills: [
-    { text: 'Mentoring', keySkill: true },
-    { text: 'React', keySkill: true },
-    { text: 'Node.js', keySkill: true },
-    { text: 'WCAG 2.1 Accessibility', keySkill: true },
-    { text: 'PostgreSQL', keySkill: true },
-    { text: 'Rest', keySkill: true },
-    { text: 'TDD', keySkill: true },
-    { text: 'Advanced Testing', keySkill: true },
+    { text: Skills.advancedTesting },
+    { text: Skills.continuousIntegration, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.css, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.documentation },
+    { text: Skills.extremeProg, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.git, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.gitHub, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.javaScript, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.mentoring },
+    { text: Skills.node },
+    { text: Skills.postgreSql },
+    { text: Skills.react },
+    { text: Skills.rest },
+    { text: Skills.tdd },
+    { text: Skills.typeScript, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.wcag },
   ],
 }
 
@@ -131,7 +203,7 @@ const just = {
       text: `Reduced email collection website deploy size by 80% within 1 hour of my first day at the company and setting up my machine, lowering hosting costs and improving page load times by several seconds.`,
     },
     {
-      text: `Built the company’s OpenID Connect provider, providing a centralised login system and heightened security.`,
+      text: `Built the company's OpenID Connect provider, providing a centralised login system and heightened security.`,
     },
     {
       text: `Built the initial product demo, a proof of concept giving stakeholders the confidence to invest in product proposal.`,
@@ -142,13 +214,27 @@ const just = {
   ],
 
   skills: [
-    { text: 'Mentoring', keySkill: true },
-    { text: 'React', keySkill: true },
-    { text: 'Node.js', keySkill: true },
-    { text: 'WCAG 2.1 Accessibility', keySkill: true },
-    { text: 'TDD', keySkill: true },
-    { text: 'Advanced Testing', keySkill: true },
-    { text: 'Agile: Scrum & Kanban', keySkill: true },
+    { text: Skills.advancedTesting },
+    { text: Skills.bash, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.continuousIntegration, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.css, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.cypress, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.docker, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.extremeProg },
+    { text: Skills.git, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.gitHub, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.mentoring },
+    { text: Skills.mocha, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.node },
+    { text: Skills.react },
+    { text: Skills.redux, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.sagas, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.scrum },
+    { text: Skills.scss, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.tdd },
+    { text: Skills.wcag },
+    { text: Skills.webpack },
   ],
 }
 
@@ -182,13 +268,35 @@ const nowtv = {
   ],
 
   skills: [
-    { text: 'Mentoring', keySkill: true },
-    { text: 'React', keySkill: true },
-    { text: 'Redux', keySkill: true },
-    { text: 'WCAG 2.1 Accessibility', keySkill: true },
-    { text: 'TDD', keySkill: true },
-    { text: 'Advanced Testing', keySkill: true },
-    { text: 'Agile: Scrum & Kanban', keySkill: true },
+    { text: Skills.advancedTesting },
+    { text: Skills.akamai },
+    { text: Skills.bash, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.bem, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.cd },
+    { text: Skills.continuousIntegration, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.css, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.cypress, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.docker, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.extremeProg, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.git, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.gitHub, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.javaScript, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.jira, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.mentoring },
+    { text: Skills.mocha },
+    { text: Skills.nightwatch, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.node, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.observability },
+    { text: Skills.owasp, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.react },
+    { text: Skills.redux },
+    { text: Skills.sagas, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.scrum },
+    { text: Skills.scss, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.tdd },
+    { text: Skills.wcag },
+    { text: Skills.webpack, exhaustive: Exhaustive.exhaustive },
   ],
 }
 
@@ -219,14 +327,15 @@ const wizenoze = {
   ],
 
   skills: [
-    { text: 'React', keySkill: true },
-    { text: 'Redux', keySkill: true },
-    { text: 'TDD', keySkill: true },
-    { text: 'Node.js', keySkill: true },
-    { text: 'SCSS', keySkill: true },
-    { text: 'Webpack', keySkill: true },
-    { text: 'PostgreSQL', keySkill: true },
-    { text: 'Cypress', keySkill: true },
+    { text: Skills.cypress },
+    { text: Skills.mocha },
+    { text: Skills.node },
+    { text: Skills.postgreSql },
+    { text: Skills.react },
+    { text: Skills.redux },
+    { text: Skills.scss },
+    { text: Skills.tdd },
+    { text: Skills.webpack },
   ],
 }
 
@@ -260,12 +369,12 @@ const thinkfulLead = {
   ],
 
   skills: [
-    { text: 'React', keySkill: true },
-    { text: 'JavaScript', keySkill: true },
-    { text: 'TDD', keySkill: true },
-    { text: 'HTML', keySkill: true },
-    { text: 'CSS', keySkill: true },
-    { text: 'Angular', keySkill: true },
+    { text: Skills.angular },
+    { text: Skills.css },
+    { text: Skills.html },
+    { text: Skills.javaScript },
+    { text: Skills.react },
+    { text: Skills.tdd },
   ],
 }
 
@@ -290,11 +399,9 @@ const metail = {
   ],
 
   skills: [
-    { text: 'MarionetteJS', keySkill: true },
-    { text: 'LESS', keySkill: true },
-    { text: 'Jira', keySkill: true },
-    { text: 'HTML', keySkill: true },
-    { text: 'CSS', keySkill: true },
+    { text: Skills.html },
+    { text: Skills.less },
+    { text: Skills.marionette },
   ],
 }
 
@@ -322,11 +429,12 @@ const transversal = {
   ],
 
   skills: [
-    { text: 'BackboneJS', keySkill: true },
-    { text: 'jQuery', keySkill: true },
-    { text: 'Mocha', keySkill: true },
-    { text: 'Grunt', keySkill: true },
-    { text: 'Browser compatibility', keySkill: true },
+    { text: Skills.backbone },
+    { text: Skills.browserCompat },
+    { text: Skills.grunt },
+    { text: Skills.html },
+    { text: Skills.jQuery },
+    { text: Skills.mocha },
   ],
 }
 
@@ -354,12 +462,14 @@ const austnews = {
   ],
 
   skills: [
-    { text: 'Zend PHP', keySkill: true },
-    { text: 'BackboneJS', keySkill: true },
-    { text: 'Marionette JS', keySkill: true },
-    { text: 'MySQL', keySkill: true },
-    { text: 'Doctrine ORM', keySkill: true },
-    { text: 'Apache', keySkill: true },
+    { text: Skills.apache },
+    { text: Skills.backbone },
+    { text: Skills.doctrine },
+    { text: Skills.html },
+    { text: Skills.jQuery },
+    { text: Skills.marionette },
+    { text: Skills.mySql },
+    { text: Skills.zend },
   ],
 }
 
@@ -384,10 +494,10 @@ const catalyst = {
   ],
 
   skills: [
-    { text: 'Wordpress', keySkill: true },
-    { text: 'PHP', keySkill: true },
-    { text: 'jQuery', keySkill: true },
-    { text: 'Apache', keySkill: true },
+    { text: Skills.apache },
+    { text: Skills.jQuery },
+    { text: Skills.php },
+    { text: Skills.wordpress },
   ],
 }
 
@@ -415,10 +525,12 @@ const brainWire = {
   ],
 
   skills: [
-    { text: 'PHP', keySkill: true },
-    { text: 'MySQL', keySkill: true },
-    { text: 'jQuery', keySkill: true },
-    { text: 'Apache', keySkill: true },
+    { text: Skills.apache },
+    { text: Skills.css },
+    { text: Skills.html },
+    { text: Skills.jQuery },
+    { text: Skills.mySql },
+    { text: Skills.php },
   ],
 }
 
@@ -446,10 +558,12 @@ const fullPhatDesign = {
   ],
 
   skills: [
-    { text: 'PHP', keySkill: true },
-    { text: 'MySQL', keySkill: true },
-    { text: 'jQuery', keySkill: true },
-    { text: 'Apache', keySkill: true },
+    { text: Skills.apache },
+    { text: Skills.css },
+    { text: Skills.html },
+    { text: Skills.jQuery },
+    { text: Skills.mySql },
+    { text: Skills.php },
   ],
 }
 
@@ -473,10 +587,7 @@ const gnb = {
     },
   ],
 
-  skills: [
-    { text: 'Communication', keySkill: true },
-    { text: 'Teaching', keySkill: true },
-  ],
+  skills: [],
 }
 
 const jda = {
@@ -503,11 +614,13 @@ const jda = {
   ],
 
   skills: [
-    { text: 'Flash', keySkill: true },
-    { text: 'PHP', keySkill: true },
-    { text: 'MySQL', keySkill: true },
-    { text: 'jQuery', keySkill: true },
-    { text: 'Apache', keySkill: true },
+    { text: Skills.apache },
+    { text: Skills.css },
+    { text: Skills.flash },
+    { text: Skills.html },
+    { text: Skills.jQuery },
+    { text: Skills.mySql },
+    { text: Skills.php },
   ],
 }
 

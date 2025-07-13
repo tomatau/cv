@@ -7,7 +7,9 @@
 @layer layout {
   body {
     display: grid;
-    grid-template: 'content sidebar';
+    grid-template:
+      'controls controls'
+      'content sidebar';
     justify-content: center;
   }
 }
