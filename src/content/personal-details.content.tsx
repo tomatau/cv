@@ -1,6 +1,6 @@
 export const personalDetails = {
   name: 'Thomas Hudspith-Tatham',
-  address: 'Swansea, Wales, SA2 8EW',
+  address: 'Swansea, Wales, SA2',
   tel: {
     label: '+447 460 917 391',
     href: 'tel:+447460917391',
