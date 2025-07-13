@@ -1,7 +1,7 @@
 import { Skills, Exhaustive } from './types'
 
 export type SkillDetail = {
-  text: Skills | string
+  text: Skills
   expert?: true
   exhaustive?: Exhaustive.exhaustive
 }
@@ -67,6 +67,7 @@ export const skills: MySkills = {
     { text: Skills.redux, expert: true, exhaustive: Exhaustive.exhaustive },
     { text: Skills.sagas, exhaustive: Exhaustive.exhaustive },
     { text: Skills.swagger, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.terraform, exhaustive: Exhaustive.exhaustive },
     { text: Skills.tailwind, exhaustive: Exhaustive.exhaustive },
     { text: Skills.vite, exhaustive: Exhaustive.exhaustive },
     { text: Skills.webpack, exhaustive: Exhaustive.exhaustive },

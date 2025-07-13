@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { SkillDetail } from './skills.content'
 
 export enum Positions {
   lead = 'Lead',
@@ -19,10 +20,9 @@ export enum Options {
 export type DetailNode = {
   text: ReactNode
   children?: DetailNode[]
-  tags?: Tags
+  skills?: SkillDetail
+  exhaustive?: Exhaustive
 }
-
-export type Tags = (Exhaustive | Skills)[]
 
 export type Period = {
   from: string
@@ -87,6 +87,7 @@ export enum Skills {
   sagas = `Redux sagas`,
   swagger = 'Swagger',
   tailwind = 'Tailwind',
+  terraform = 'Terraform',
   vite = 'Vite',
   webpack = 'Webpack',
   wordpress = 'Wordpress',

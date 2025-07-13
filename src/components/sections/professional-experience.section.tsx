@@ -40,11 +40,11 @@ export function ProfessionalExperience() {
           <div className='section decorated' key={pE.establishment.name}>
             <div className='headings'>
               <h3 className='with-dot'>
-                {pE.period.start}
+                {pE.period.from}
                 <br />
                 &mdash;
                 <br />
-                {pE.period.end}
+                {pE.period.to}
               </h3>
             </div>
             <div className='details'>

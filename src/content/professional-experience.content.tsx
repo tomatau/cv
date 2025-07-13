@@ -1,9 +1,22 @@
-import { Exhaustive, Skills } from './types'
+import { SkillDetail } from './skills.content'
+import { DetailNode, Exhaustive, Period, Skills } from './types'
 
-const dendra = {
+type ProfessionalExperience = {
+  period: Period
+  role: string
+  establishment: {
+    name: string
+    location: string
+    size?: string
+  }
+  responsibilities: DetailNode[]
+  skills: SkillDetail[]
+}
+
+const dendra: ProfessionalExperience = {
   period: {
-    start: `Apr 2024`,
-    end: `Jul 2025`,
+    from: `Apr 2024`,
+    to: `Jul 2025`,
   },
   role: 'Senior Software Engineer',
   establishment: {
@@ -23,12 +36,15 @@ const dendra = {
           text: `Supported internal GIS, Data Ecology, Environmental Management, and ML operations.`,
         },
       ],
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Contributed to new features and products to support the product market fit, supporting sales, and improve operating efficiency.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Improved team processes with stricter practices around quarterly goals, success measures, scope discipline, ticket health and team processes.`,
+      exhaustive: Exhaustive.exhaustive,
     },
   ],
   skills: [
@@ -58,15 +74,16 @@ const dendra = {
     { text: Skills.scrum, exhaustive: Exhaustive.exhaustive },
     { text: Skills.scss },
     { text: Skills.technicalStrategy },
+    { text: Skills.terraform },
     { text: Skills.typeScript },
     { text: Skills.webpack, exhaustive: Exhaustive.exhaustive },
   ],
 }
 
-const beamery = {
+const beamery: ProfessionalExperience = {
   period: {
-    start: `Jan 2020`,
-    end: `Dec 2023`,
+    from: `Jan 2020`,
+    to: `Dec 2023`,
   },
   role: 'Principal Engineer and Tech Lead',
   establishment: {
@@ -77,6 +94,7 @@ const beamery = {
   responsibilities: [
     {
       text: `Owned and developed the “Suggestions” microservices product in my first quarter in the role, the company's first AI offering critical to the AI sales pitch producing $3m in ARR.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Leading new Frontend development team of 6 engineers accountable for the new Design System, Multi Language, MFE architecture, A11y and FE tooling, improving scalability and developer efficiency.`,
@@ -92,6 +110,7 @@ const beamery = {
     },
     {
       text: `Migrating legacy monolithic systems to independently owned services.`,
+      exhaustive: Exhaustive.exhaustive,
     },
   ],
   skills: [
@@ -146,10 +165,10 @@ const beamery = {
   ],
 }
 
-const thinkfulWriter = {
+const thinkfulWriter: ProfessionalExperience = {
   period: {
-    start: `May 2018`,
-    end: `Jan 2020`,
+    from: `May 2018`,
+    to: `Jan 2020`,
   },
   role: 'Mentor / Consultant / Open Source Developer',
   establishment: {
@@ -163,6 +182,7 @@ const thinkfulWriter = {
     },
     {
       text: `Mentoring students with no web development experience into full-stack employment within 6 months.`,
+      exhaustive: Exhaustive.exhaustive,
     },
   ],
 
@@ -187,10 +207,10 @@ const thinkfulWriter = {
   ],
 }
 
-const just = {
+const just: ProfessionalExperience = {
   period: {
-    start: `Nov 2017`,
-    end: `May 2018`,
+    from: `Nov 2017`,
+    to: `May 2018`,
   },
   role: 'Senior Developer',
   establishment: {
@@ -201,12 +221,14 @@ const just = {
   responsibilities: [
     {
       text: `Reduced email collection website deploy size by 80% within 1 hour of my first day at the company and setting up my machine, lowering hosting costs and improving page load times by several seconds.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
-      text: `Built the company's OpenID Connect provider, providing a centralised login system and heightened security.`,
+      text: `Lead the build of the company's OpenID Connect provider, providing a centralised login system and heightened security.`,
     },
     {
       text: `Built the initial product demo, a proof of concept giving stakeholders the confidence to invest in product proposal.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Built the first release of front end platform in 6 months less than the budgeted and expected time, allowing the development team to focus on other systematic improvements.`,
@@ -238,10 +260,10 @@ const just = {
   ],
 }
 
-const nowtv = {
+const nowtv: ProfessionalExperience = {
   period: {
-    start: `Dec 2015`,
-    end: `Nov 2017`,
+    from: `Dec 2015`,
+    to: `Nov 2017`,
   },
   role: 'Web Developer',
   establishment: {
@@ -251,16 +273,18 @@ const nowtv = {
   },
   responsibilities: [
     {
-      text: `Building a service status app to reduce call service support by 80%.`,
+      text: `Building a service status app to reduce call service support costs by 80%.`,
     },
     {
       text: `Adding features to the eCommerce platform to increase search engine ranks for NowTV products and increase sales.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Received an award for contributions to feedback and development.`,
     },
     {
       text: `Running presentations and talks on mentoring, isomorphic web apps and a new approach to ReactJS integration testing.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Inventing a new style of React functional testing, reducing continuous integration cycle time from 50 minutes to 3 minutes, saving 9 hours of the team's development time per day.`,
@@ -300,10 +324,10 @@ const nowtv = {
   ],
 }
 
-const wizenoze = {
+const wizenoze: ProfessionalExperience = {
   period: {
-    start: `Aug 2014`,
-    end: `Dec 2015`,
+    from: `Aug 2014`,
+    to: `Dec 2015`,
   },
   role: 'Web Developer',
   establishment: {
@@ -320,9 +344,11 @@ const wizenoze = {
     },
     {
       text: `Employed to fix sluggish admin pages, achieved this goal as the sole front end developer whilst adding new high priority features.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Evangelising React and testing practices to add tests to legacy systems and set-up the front end continuous integration for daily releases.`,
+      exhaustive: Exhaustive.exhaustive,
     },
   ],
 
@@ -339,10 +365,10 @@ const wizenoze = {
   ],
 }
 
-const thinkfulLead = {
+const thinkfulLead: ProfessionalExperience = {
   period: {
-    start: `Mar 2014`,
-    end: `Dec 2015`,
+    from: `Mar 2014`,
+    to: `Dec 2015`,
   },
   role: 'Angular & React Curriculum Lead',
   establishment: {
@@ -359,12 +385,15 @@ const thinkfulLead = {
     },
     {
       text: `Constant improvements to the Angular JS curriculum to help thousands of students improve comprehension and pass grade.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Writing guides and tutorials for Angular and React.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Running workshops on advanced Angular JS and Isomorphic React to existing senior developers in companies such as Dow Jones.`,
+      exhaustive: Exhaustive.exhaustive,
     },
   ],
 
@@ -378,10 +407,10 @@ const thinkfulLead = {
   ],
 }
 
-const metail = {
+const metail: ProfessionalExperience = {
   period: {
-    start: `Feb 2014`,
-    end: `Mar 2014`,
+    from: `Feb 2014`,
+    to: `Mar 2014`,
   },
   role: 'Senior Web Engineer',
   establishment: {
@@ -392,9 +421,14 @@ const metail = {
   responsibilities: [
     {
       text: `Evangelising and advocating TDD in the front end to reduce the need for manual browser testing.`,
+      exhaustive: Exhaustive.exhaustive,
+    },
+    {
+      text: `Contributing to the build of the company's main product - an eCommerce plugin widget.`,
     },
     {
       text: `Collaborating with the scrum master to improve the front end team's adherence to scrum.`,
+      exhaustive: Exhaustive.exhaustive,
     },
   ],
 
@@ -405,10 +439,10 @@ const metail = {
   ],
 }
 
-const transversal = {
+const transversal: ProfessionalExperience = {
   period: {
-    start: `Sep 2013`,
-    end: `Feb 2014`,
+    from: `Sep 2013`,
+    to: `Feb 2014`,
   },
   role: 'Web Developer',
   establishment: {
@@ -419,9 +453,11 @@ const transversal = {
   responsibilities: [
     {
       text: `Introduced TDD practices and libraries to the front-end development team, decreasing code regressions.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Promoted SOLID design patterns in the front-end codebase, improving maintenance and developer productivity.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Contributed to the 20-person development team's transition to agile methodologies, increasing collaboration and productivity.`,
@@ -438,10 +474,10 @@ const transversal = {
   ],
 }
 
-const austnews = {
+const austnews: ProfessionalExperience = {
   period: {
-    start: `Feb 2012`,
-    end: `Apr 2013`,
+    from: `Feb 2012`,
+    to: `Apr 2013`,
   },
   role: 'Web Developer',
   establishment: {
@@ -451,16 +487,16 @@ const austnews = {
   },
   responsibilities: [
     {
-      text: `Introduced TDD practices and libraries to the front-end development team, decreasing code regressions.`,
+      text: `Resolved a legacy database system issue, restoring hundreds of client websites after being called in on my day off sick.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
-      text: `Promoted SOLID design patterns in the front-end codebase, improving maintenance and developer productivity.`,
+      text: `Created a suite of 5 applications used to streamline prospect customers to integrated clients in 20 times the productivity.`,
     },
     {
-      text: `Contributed to the 20-person development team's transition to agile methodologies, increasing collaboration and productivity.`,
+      text: `Built the rebranded website in under two weeks, adding dozens of new features to reduce technical support needs and free up sales staff time.`,
     },
   ],
-
   skills: [
     { text: Skills.apache },
     { text: Skills.backbone },
@@ -473,10 +509,10 @@ const austnews = {
   ],
 }
 
-const catalyst = {
+const catalyst: ProfessionalExperience = {
   period: {
-    start: `Jan 2012`,
-    end: `Feb 2012`,
+    from: `Jan 2012`,
+    to: `Feb 2012`,
   },
   role: 'Wordpress Guru',
   establishment: {
@@ -490,9 +526,9 @@ const catalyst = {
     },
     {
       text: `Exceeded expectations by fixing problems in half the budgeted time.`,
+      exhaustive: Exhaustive.exhaustive,
     },
   ],
-
   skills: [
     { text: Skills.apache },
     { text: Skills.jQuery },
@@ -501,10 +537,10 @@ const catalyst = {
   ],
 }
 
-const brainWire = {
+const brainWire: ProfessionalExperience = {
   period: {
-    start: `Feb 2011`,
-    end: `Jul 2011`,
+    from: `Feb 2011`,
+    to: `Jul 2011`,
   },
   role: 'Web Developer',
   establishment: {
@@ -518,9 +554,11 @@ const brainWire = {
     },
     {
       text: `Provided support in UX, SEO, and methodologies, extending beyond contractual responsibilities.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Strong client collaboration to integrate desired functionality into administrative controls.`,
+      exhaustive: Exhaustive.exhaustive,
     },
   ],
 
@@ -534,10 +572,10 @@ const brainWire = {
   ],
 }
 
-const fullPhatDesign = {
+const fullPhatDesign: ProfessionalExperience = {
   period: {
-    start: `Apr 2010`,
-    end: `Sep 2010`,
+    from: `Apr 2010`,
+    to: `Sep 2010`,
   },
   role: 'Web Developer',
   establishment: {
@@ -551,6 +589,7 @@ const fullPhatDesign = {
     },
     {
       text: `Collaborated daily with the company owner to realise designs for clients and customers.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Collaborating directly with customers to integrate desired functionality into admin controls.`,
@@ -567,10 +606,10 @@ const fullPhatDesign = {
   ],
 }
 
-const gnb = {
+const gnb: ProfessionalExperience = {
   period: {
-    start: `Jul 2009`,
-    end: `Apr 2010`,
+    from: `Jul 2009`,
+    to: `Apr 2010`,
   },
   role: 'English Teacher',
   establishment: {
@@ -581,19 +620,19 @@ const gnb = {
   responsibilities: [
     {
       text: `Integrated a game-based teaching method to increase student engagement and improve English speaking ability.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Taught over 200 students, achieving a 99.5%+ pass rate.`,
     },
   ],
-
   skills: [],
 }
 
-const jda = {
+const jda: ProfessionalExperience = {
   period: {
-    start: `Sep 2008`,
-    end: `Dec 2008`,
+    from: `Sep 2008`,
+    to: `Dec 2008`,
   },
   role: 'Assistant Web Developer',
   establishment: {
@@ -607,9 +646,11 @@ const jda = {
     },
     {
       text: `Introduced jQuery to the development team, nearly doubling the front-end development productivity.`,
+      exhaustive: Exhaustive.exhaustive,
     },
     {
       text: `Introduced the development team to PHP PDO, improving security to remove risk of XSS and SQL injection attacks.`,
+      exhaustive: Exhaustive.exhaustive,
     },
   ],
 

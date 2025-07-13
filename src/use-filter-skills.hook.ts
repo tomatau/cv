@@ -1,7 +1,7 @@
 import { Skills } from './content'
 import { useControlsContext } from './controls'
 
-type SkillsArr = (Skills | string)[]
+type SkillsArr = Skills[]
 type ItemWithSkills = Record<string, unknown>
 type SelectSkills<T extends ItemWithSkills> = (item: T) => SkillsArr
 
@@ -14,7 +14,7 @@ export const filterSkill = <T extends ItemWithSkills>(
 
   const skills = selectSkills(itemWithSkills)
 
-  const hasSkillMatch = (skill: Skills | string) =>
+  const hasSkillMatch = (skill: Skills) =>
     skill.toLowerCase().includes(filterText!.toLowerCase())
 
   if (skills.some(hasSkillMatch)) return true
