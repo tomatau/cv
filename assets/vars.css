@@ -31,7 +31,7 @@
   --header-font-family: 'Avenir Next', sans-serif;
   --base-font-size: 10pt;
   --header-font-size: calc(var(--base-font-size) * 2);
-  --sub-header-font-size: calc(var(--header-font-size) * 0.4);
+  --sub-header-font-size: calc(var(--header-font-size) * 0.5);
   --attention-font-size: calc(var(--header-font-size) * 0.7);
   --wide-spacing: 0.05rem;
 }

@@ -1,4 +1,5 @@
 import { ControlPanel, ControlsProvider } from '../controls'
+import { BrowserWarning } from './browser-warning'
 import { Html } from './html'
 import {
   Education,
@@ -14,6 +15,7 @@ export function CV() {
     <Html>
       <ControlsProvider>
         <body>
+          <BrowserWarning />
           <ControlPanel />
           <main className='content'>
             <PersonalDetails />
