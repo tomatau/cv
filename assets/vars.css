@@ -3,6 +3,7 @@
   --clr-container: oklch(1 0 0);
   --clr-sidebar: oklch(0.94 0 0);
   --clr-foreground: oklch(36% 0.00004 271.152);
+  --clr-foreground--ondark: oklch(92% 0.004 271.152);
   --clr-foreground-active: oklch(52% 0.00004 271.152);
   --clr-heading: oklch(44.417% 0.08852 257.745);
   --clr-heading-muted: oklch(from var(--clr-sub-heading) calc(l - 0.05) c h);

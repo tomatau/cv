@@ -1,3 +1,4 @@
+import * as Switch from '@radix-ui/react-switch'
 import { Exhaustive } from '../content'
 import { useControlsContext } from './use-controls-context'
 
@@ -6,17 +7,21 @@ export function ControlPanel() {
   return (
     <aside className='controls'>
       <div className='control'>
-        <button
-          onClick={() =>
-            controls.setExhaustive(v =>
-              v === Exhaustive.minimal
-                ? Exhaustive.exhaustive
-                : Exhaustive.minimal
+        <label className='switchLabel' htmlFor='exhaustive-mode'>
+          Exhaustive:
+        </label>
+        <Switch.Root
+          className='switchRoot'
+          id='exhaustive-mode'
+          checked={controls.exhaustive === Exhaustive.exhaustive}
+          onCheckedChange={checked =>
+            controls.setExhaustive(
+              checked ? Exhaustive.exhaustive : Exhaustive.minimal
             )
           }
         >
-          {controls.exhaustive}
-        </button>
+          <Switch.Thumb className='switchThumb' />
+        </Switch.Root>
       </div>
       <div className='control'>
         <label htmlFor='position'>Position:</label>
