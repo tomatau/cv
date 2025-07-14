@@ -132,7 +132,3 @@ export const skills: MySkills = {
     { text: Skills.wcag, expert: true },
   ],
 }
-
-/*
-twilio
-*/

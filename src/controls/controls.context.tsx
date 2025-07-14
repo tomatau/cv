@@ -6,8 +6,8 @@ export type ControlsContextValue = {
   setExhaustive: Dispatch<SetStateAction<Exhaustive>>
   position: string
   setPosition: Dispatch<SetStateAction<string>>
-  skillsFilter: string | null
-  setSkillsFilter: Dispatch<SetStateAction<string | null>>
+  skillsFilter: string[] | null
+  setSkillsFilter: Dispatch<SetStateAction<string[] | null>>
 }
 
 const noop = () => void 0

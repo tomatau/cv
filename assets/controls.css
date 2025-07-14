@@ -17,8 +17,9 @@
 }
 
 @layer components {
-  .controls input {
+  .controls > input {
     width: 14rem;
+    min-height: 30px;
   }
 }
 

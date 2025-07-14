@@ -10,9 +10,11 @@ export function SkillList({
   const controls = useControlsContext()
   const filteredExhaustive = useFilterExhaustive(skills)
   const filteredSkills = filteredExhaustive.filter(skill =>
-    skill.text
-      .toLowerCase()
-      .includes(controls.skillsFilter?.toLowerCase() || '')
+    controls.skillsFilter?.length
+      ? controls.skillsFilter?.some(sF =>
+          skill.text.toLowerCase().includes(sF.toLowerCase())
+        )
+      : true
   )
   return (
     <ul className='inline-list'>

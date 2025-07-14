@@ -7,15 +7,15 @@ type SelectSkills<T extends ItemWithSkills> = (item: T) => SkillsArr
 
 export const filterSkill = <T extends ItemWithSkills>(
   itemWithSkills: T,
-  filterText: string | null,
+  skillFilters: string[] | null,
   selectSkills: SelectSkills<T>
 ) => {
-  if (!filterText) return true
+  if (!skillFilters || !skillFilters.length) return true
 
   const skills = selectSkills(itemWithSkills)
 
   const hasSkillMatch = (skill: Skills) =>
-    skill.toLowerCase().includes(filterText!.toLowerCase())
+    skillFilters.some(sF => skill.toLowerCase().includes(sF!.toLowerCase()))
 
   if (skills.some(hasSkillMatch)) return true
   return false

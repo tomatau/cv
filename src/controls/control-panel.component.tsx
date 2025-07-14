@@ -1,7 +1,7 @@
-import * as Switch from '@radix-ui/react-switch'
-import { Exhaustive } from '../content'
-import { useControlsContext } from './use-controls-context'
+import Select from 'react-select'
+import { Exhaustive, Skills } from '../content'
 import { ToggleControl } from './toggle-control.component'
+import { useControlsContext } from './use-controls-context'
 
 export function ControlPanel() {
   const controls = useControlsContext()
@@ -29,14 +29,68 @@ export function ControlPanel() {
       </div>
       <div className='control'>
         <label htmlFor='skillsFilter'>Skills:</label>
-        <input
-          type='text'
-          id='skillsFilter'
-          name='skillsFilter'
-          value={controls.skillsFilter || ''}
-          onInput={val =>
-            controls.setSkillsFilter(val.currentTarget.value || null)
-          }
+        <Select
+          inputId='skillsFilter'
+          isMulti
+          options={Object.values(Skills)
+            .sort()
+            .map(skill => ({
+              label: skill,
+              value: skill,
+            }))}
+          onChange={options => {
+            controls.setSkillsFilter(options.map(o => o.value) || null)
+          }}
+          placeholder='filter skills...'
+          styles={{
+            control: (baseStyles, state) => ({
+              ...baseStyles,
+              minWidth: '10rem',
+              maxWidth: '18rem',
+              minHeight: '30px',
+              borderColor: 'black',
+              borderRadius: '2px',
+            }),
+            valueContainer: (baseStyles, state) => ({
+              ...baseStyles,
+              flexWrap: 'nowrap',
+              overflowX: 'auto',
+              padding: '0px 8px',
+            }),
+            multiValue: (baseStyles, state) => ({
+              ...baseStyles,
+              minWidth: 'fit-content',
+              borderRadius: '6px',
+            }),
+            multiValueLabel: (baseStyles, state) => ({
+              ...baseStyles,
+              padding: '1px',
+            }),
+            indicatorSeparator: (baseStyles, state) => ({
+              ...baseStyles,
+              paddingTop: 0,
+              paddingBottom: 0,
+            }),
+            indicatorsContainer: (baseStyles, state) => ({
+              ...baseStyles,
+              padding: '0px 2px',
+            }),
+            input: (baseStyles, state) => ({
+              ...baseStyles,
+              paddingTop: '0px',
+              paddingBottom: '0px',
+            }),
+            dropdownIndicator: (baseStyles, state) => ({
+              ...baseStyles,
+              paddingTop: '0px',
+              paddingBottom: '0px',
+            }),
+            clearIndicator: (baseStyles, state) => ({
+              ...baseStyles,
+              paddingTop: '0px',
+              paddingBottom: '0px',
+            }),
+          }}
         />
       </div>
     </aside>
