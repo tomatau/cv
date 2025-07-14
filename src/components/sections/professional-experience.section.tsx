@@ -1,25 +1,16 @@
 import { Briefcase } from 'lucide-react'
-import { professionalExperience, Exhaustive, SkillDetail } from '../../content'
+import { useState } from 'react'
+import { Exhaustive, professionalExperience } from '../../content'
 import { useControlsContext } from '../../controls'
+import { ToggleControl } from '../../controls/toggle-control.component'
+import { useFilterExhaustive } from '../../use-filter-exhaustive.hook'
 import { useFilterSkills } from '../../use-filter-skills.hook'
 import { NodeList } from '../node-list'
-import { useFilterExhaustive } from '../../use-filter-exhaustive.hook'
-
-function SkillList({ skills }: { skills: SkillDetail[] }) {
-  const filteredSkills = useFilterExhaustive(skills)
-  return (
-    <ul className='inline-list'>
-      {filteredSkills.map(skill => (
-        <li key={skill.text}>
-          <span className='skill'>{skill.text}</span>
-        </li>
-      ))}
-    </ul>
-  )
-}
+import { SkillList } from '../skill-list.component'
 
 export function ProfessionalExperience() {
   const controls = useControlsContext()
+  const [showSkills, setShowSkills] = useState(true)
   const filteredBySkills = useFilterSkills(professionalExperience, item =>
     item.skills.map(skillD => skillD.text)
   )
@@ -33,6 +24,12 @@ export function ProfessionalExperience() {
         <div className='headings'>
           <Briefcase size={20} />
         </div>
+        <ToggleControl
+          id='show-professional-skills'
+          label='skills'
+          checked={showSkills}
+          onCheckedChange={checked => setShowSkills(checked)}
+        />
       </div>
       {filteredExhaustive.map((pE, idx) => {
         const showDetailedResponsibilities =
@@ -70,7 +67,7 @@ export function ProfessionalExperience() {
               {showDetailedResponsibilities && (
                 <NodeList list={pE.responsibilities} />
               )}
-              <SkillList skills={pE.skills} />
+              {showSkills && <SkillList skills={pE.skills} />}
             </div>
           </div>
         )

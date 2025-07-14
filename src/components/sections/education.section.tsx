@@ -1,8 +1,12 @@
 import { GraduationCap } from 'lucide-react'
+import { useState } from 'react'
 import { education } from '../../content'
+import { ToggleControl } from '../../controls/toggle-control.component'
 import { useFilterSkills } from '../../use-filter-skills.hook'
+import { SkillList } from '../skill-list.component'
 
 export function Education() {
+  const [showSkills, setShowSkills] = useState(false)
   const filteredEducation = useFilterSkills(
     education,
     content => content.skills || []
@@ -16,6 +20,12 @@ export function Education() {
         <div className='headings'>
           <GraduationCap size={20} />
         </div>
+        <ToggleControl
+          id='show-education-skills'
+          label='skills'
+          checked={showSkills}
+          onCheckedChange={checked => setShowSkills(checked)}
+        />
       </div>
       {filteredEducation.map((edu, index) => (
         <div className='section decorated' key={index}>
@@ -35,6 +45,9 @@ export function Education() {
               <h4 key={idx}>{qual.text}</h4>
             ))}
             <p className='establishment'>{edu.establishment}</p>
+            {showSkills && (
+              <SkillList skills={edu.skills?.map(skill => ({ text: skill }))} />
+            )}
           </div>
         </div>
       ))}

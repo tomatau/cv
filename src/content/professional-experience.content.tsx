@@ -56,6 +56,7 @@ const dendra: ProfessionalExperience = {
   ],
   skills: [
     { text: Skills.advancedTesting, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.aiIntegrations },
     { text: Skills.angular },
     { text: Skills.apiDesign },
     { text: Skills.architecture, exhaustive: Exhaustive.exhaustive },
@@ -129,6 +130,8 @@ const beamery: ProfessionalExperience = {
   skills: [
     { text: Skills.abTesting, exhaustive: Exhaustive.exhaustive },
     { text: Skills.advancedTesting, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.aiEngineering },
+    { text: Skills.aiIntegrations },
     { text: Skills.apiDesign, exhaustive: Exhaustive.exhaustive },
     { text: Skills.architecture, exhaustive: Exhaustive.exhaustive },
     { text: Skills.bash, exhaustive: Exhaustive.exhaustive },
@@ -389,6 +392,7 @@ const wizenoze: ProfessionalExperience = {
     },
   ],
   skills: [
+    { text: Skills.aiIntegrations },
     { text: Skills.aws, exhaustive: Exhaustive.exhaustive },
     { text: Skills.browserCompat, exhaustive: Exhaustive.exhaustive },
     { text: Skills.cd, exhaustive: Exhaustive.exhaustive },
@@ -493,6 +497,7 @@ const metail: ProfessionalExperience = {
   ],
 
   skills: [
+    { text: Skills.aiIntegrations },
     { text: Skills.backbone, exhaustive: Exhaustive.exhaustive },
     { text: Skills.browserCompat },
     { text: Skills.coffee },
@@ -529,6 +534,7 @@ const transversal: ProfessionalExperience = {
     },
   ],
   skills: [
+    { text: Skills.aiIntegrations },
     { text: Skills.backbone },
     { text: Skills.browserCompat },
     { text: Skills.css, exhaustive: Exhaustive.exhaustive },

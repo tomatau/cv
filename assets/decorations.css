@@ -21,6 +21,17 @@
         oklch(from var(--clr-decoration-muted) calc(l + 0.1) c h);
     }
   }
+
+  .icon-decoration {
+    display: flex;
+    justify-content: space-between;
+
+    .headings {
+      position: relative;
+      right: -1.46rem;
+      bottom: -5px;
+    }
+  }
 }
 
 @layer components {
@@ -34,13 +45,8 @@
 
   .icon-decoration {
     margin-top: 0.6rem;
+    padding-right: 0.5rem;
     border-top: 1px solid var(--clr-sidebar);
-
-    .headings {
-      position: relative;
-      right: -1.46rem;
-      bottom: -5px;
-    }
 
     svg {
       color: var(--clr-decoration-pop);

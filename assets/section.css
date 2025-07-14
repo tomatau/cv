@@ -13,6 +13,7 @@
   }
 
   .details {
+    min-height: 100%;
     grid-area: details;
     padding-right: 0.5rem;
     width: var(--details-width);

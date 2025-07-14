@@ -6,4 +6,10 @@
   .super-bold {
     font-weight: 700;
   }
+
+  @media print {
+    .web-only {
+      display: none;
+    }
+  }
 }

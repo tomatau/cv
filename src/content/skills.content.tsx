@@ -1,4 +1,4 @@
-import { Skills, Exhaustive, Practices, Tools, Languages } from './types'
+import { Exhaustive, Languages, Practices, Skills, Tools } from './types'
 
 export type SkillDetail = {
   text: Languages | Tools | Practices
@@ -91,6 +91,7 @@ export const skills: MySkills = {
     { text: Skills.advancedTesting, expert: true },
     { text: Skills.abTesting },
     { text: Skills.aiEngineering },
+    { text: Skills.aiIntegrations },
     { text: Skills.architecture, expert: true },
     { text: Skills.apiDesign, expert: true },
     { text: Skills.bem, expert: true, exhaustive: Exhaustive.exhaustive },

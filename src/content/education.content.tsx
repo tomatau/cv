@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { DetailNode, Period, Tags, Exhaustive, Skills } from './types'
+import { DetailNode, Period, Skills } from './types'
 
 type Education = {
   period: Period
