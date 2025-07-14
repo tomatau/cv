@@ -61,7 +61,7 @@ const dendra: ProfessionalExperience = {
     { text: Skills.architecture, exhaustive: Exhaustive.exhaustive },
     { text: Skills.aws, exhaustive: Exhaustive.exhaustive },
     { text: Skills.bash, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.bem },
+    { text: Skills.bem, exhaustive: Exhaustive.exhaustive },
     { text: Skills.continuousIntegration, exhaustive: Exhaustive.exhaustive },
     { text: Skills.css, exhaustive: Exhaustive.exhaustive },
     { text: Skills.cypress },
@@ -299,7 +299,7 @@ const nowtv: ProfessionalExperience = {
   establishment: {
     name: 'NowTV',
     location: 'Osterley',
-    size: 'corp: 400+ staff',
+    size: 'corp: 600+ staff',
   },
   responsibilities: [
     {
@@ -551,7 +551,7 @@ const austnews: ProfessionalExperience = {
   establishment: {
     name: 'AustNews',
     location: 'Brisbane',
-    size: 'corp: 1 engineer',
+    size: 'corp: ~20 staff, 1 engineer',
   },
   responsibilities: [
     {
