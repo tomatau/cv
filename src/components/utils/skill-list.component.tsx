@@ -1,6 +1,6 @@
-import { SkillDetail } from '../content'
-import { useControlsContext } from '../controls'
-import { useFilterExhaustive } from '../use-filter-exhaustive.hook'
+import { useControlsContext } from '@/components/controls'
+import { useFilterExhaustive } from '@/components/utils'
+import { SkillDetail } from '@/content'
 
 export function SkillList({
   skills = [],

@@ -1,5 +1,5 @@
+import { personalDetails } from '@/content'
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
-import { personalDetails } from '../../content'
 
 export function Social() {
   return (

@@ -1,12 +1,12 @@
+import { ToggleControl, useControlsContext } from '@/components/controls'
+import { useFilterExhaustive, useFilterSkills } from '@/components/utils'
+import { NodeList } from '@/components/utils/node-list.component'
+import { SkillList } from '@/components/utils/skill-list.component'
+import { Exhaustive, professionalExperience } from '@/content'
 import { Briefcase } from 'lucide-react'
 import { useState } from 'react'
-import { Exhaustive, professionalExperience } from '../../content'
-import { useControlsContext } from '../../controls'
-import { ToggleControl } from '../../controls/toggle-control.component'
-import { useFilterExhaustive } from '../../use-filter-exhaustive.hook'
-import { useFilterSkills } from '../../use-filter-skills.hook'
-import { NodeList } from '../node-list'
-import { SkillList } from '../skill-list.component'
+
+const NUM_ITEMS_TO_SHOW_RESPONSIBILITIES = 2
 
 export function ProfessionalExperience() {
   const controls = useControlsContext()
@@ -33,7 +33,8 @@ export function ProfessionalExperience() {
       </div>
       {filteredExhaustive.map((pE, idx) => {
         const showDetailedResponsibilities =
-          controls.exhaustive === Exhaustive.exhaustive || idx < 2
+          controls.exhaustive === Exhaustive.exhaustive ||
+          idx < NUM_ITEMS_TO_SHOW_RESPONSIBILITIES
         return (
           <div className='section decorated' key={pE.establishment.name}>
             <div className='headings'>

@@ -1,5 +1,5 @@
+import { useFilterExhaustive } from '@/components/utils'
 import { ReactNode } from 'react'
-import { useFilterExhaustive } from '../use-filter-exhaustive.hook'
 
 type Node = { text: ReactNode; children?: Node[] }
 

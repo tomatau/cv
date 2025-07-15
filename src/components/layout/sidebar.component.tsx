@@ -1,4 +1,4 @@
-import { Skills, Social } from './sections'
+import { Skills, Social } from '@/components/sections'
 
 export function Sidebar() {
   return (

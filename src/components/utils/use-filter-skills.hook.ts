@@ -1,5 +1,5 @@
-import { Skills } from './content'
-import { useControlsContext } from './controls'
+import { useControlsContext } from '@/components/controls'
+import { Skills } from '@/content'
 
 type SkillsArr = Skills[]
 type ItemWithSkills = Record<string, unknown>
@@ -21,7 +21,7 @@ export const filterSkill = <T extends ItemWithSkills>(
   return false
 }
 
-const defaultSelectSkills = item => item.skills as SkillsArr
+const defaultSelectSkills = (item: ItemWithSkills) => item.skills as SkillsArr
 
 export function useFilterSkills<T extends ItemWithSkills>(
   itemsWithSkills: T[],

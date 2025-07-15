@@ -1,5 +1,5 @@
+import { Exhaustive } from '@/content'
 import { createContext, Dispatch, SetStateAction } from 'react'
-import { Exhaustive } from '../content'
 
 export type ControlsContextValue = {
   exhaustive: Exhaustive

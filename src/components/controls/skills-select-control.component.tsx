@@ -1,5 +1,5 @@
+import { Skills } from '@/content'
 import Select from 'react-select'
-import { Skills } from '../content'
 import { useControlsContext } from './use-controls-context'
 
 export function SkillsSelectControl() {

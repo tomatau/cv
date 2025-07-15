@@ -1,5 +1,5 @@
-import { desiredPosition, personalDetails } from '../../content'
-import { useControlsContext } from '../../controls'
+import { useControlsContext } from '@/components/controls'
+import { desiredPosition, personalDetails } from '@/content'
 
 export function PersonalDetails() {
   const controls = useControlsContext()

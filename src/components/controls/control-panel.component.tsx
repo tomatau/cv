@@ -1,4 +1,4 @@
-import { Exhaustive } from '../content'
+import { Exhaustive } from '@/content'
 import { SkillsSelectControl } from './skills-select-control.component'
 import { ToggleControl } from './toggle-control.component'
 import { useControlsContext } from './use-controls-context'

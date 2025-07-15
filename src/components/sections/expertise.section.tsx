@@ -1,6 +1,6 @@
+import { NodeList } from '@/components/utils/node-list.component'
+import { expertise } from '@/content'
 import { Lightbulb } from 'lucide-react'
-import { expertise } from '../../content'
-import { NodeList } from '../node-list'
 
 export function Expertise() {
   return (

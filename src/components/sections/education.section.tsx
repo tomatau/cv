@@ -1,9 +1,9 @@
+import { ToggleControl } from '@/components/controls'
+import { useFilterSkills } from '@/components/utils'
+import { SkillList } from '@/components/utils/skill-list.component'
+import { education } from '@/content'
 import { GraduationCap } from 'lucide-react'
 import { useState } from 'react'
-import { education } from '../../content'
-import { ToggleControl } from '../../controls/toggle-control.component'
-import { useFilterSkills } from '../../use-filter-skills.hook'
-import { SkillList } from '../skill-list.component'
 
 export function Education() {
   const [showSkills, setShowSkills] = useState(false)

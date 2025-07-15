@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import { SkillDetail } from './skills.content'
 
 export enum Positions {
   lead = 'Lead',
@@ -13,8 +12,10 @@ export enum Exhaustive {
   exhaustive = 'exhaustive',
 }
 
-export enum Options {
-  recentExperienceOnly,
+export type SkillDetail = {
+  text: Languages | Tools | Practices
+  expert?: true
+  exhaustive?: Exhaustive.exhaustive
 }
 
 export type DetailNode = {

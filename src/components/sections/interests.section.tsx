@@ -1,6 +1,6 @@
+import { NodeList } from '@/components/utils/node-list.component'
+import { interests } from '@/content'
 import { Heart } from 'lucide-react'
-import { interests } from '../../content/interests.content'
-import { NodeList } from '../node-list'
 
 export function Interests() {
   return (

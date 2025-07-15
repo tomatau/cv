@@ -1,10 +1,4 @@
-import { Exhaustive, Languages, Practices, Skills, Tools } from './types'
-
-export type SkillDetail = {
-  text: Languages | Tools | Practices
-  expert?: true
-  exhaustive?: Exhaustive.exhaustive
-}
+import { Exhaustive, SkillDetail, Skills } from './types'
 
 type MySkills = Record<string, SkillDetail[]>
 

@@ -1,5 +1,5 @@
-import { Exhaustive } from './content'
-import { useControlsContext } from './controls'
+import { useControlsContext } from '@/components/controls'
+import { Exhaustive } from '@/content'
 
 type ContentWithVerbose = Record<string, unknown>
 type SelectExhaustive<T extends ContentWithVerbose> = (
@@ -14,14 +14,15 @@ export const filterExhaustive = <T extends ContentWithVerbose>(
   if (!exhaustive) return true
   if (exhaustive === Exhaustive.exhaustive) return true
 
-  // filter for only minimal
+  // filter for non-exhaustive
   const contentExhaustive = selectExhaustive(contentWithVerbose)
   if (!contentExhaustive) return true
   if (contentExhaustive === Exhaustive.exhaustive) return false
   return true
 }
 
-const defaultSelectExhaustive = item => item.exhaustive as Exhaustive
+const defaultSelectExhaustive = (item: ContentWithVerbose) =>
+  item.exhaustive as Exhaustive
 
 export function useFilterExhaustive<T extends ContentWithVerbose>(
   contentWithVerbose: T[],

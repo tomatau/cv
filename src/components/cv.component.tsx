@@ -1,14 +1,14 @@
-import { ControlPanel, ControlsProvider } from '../controls'
-import { BrowserWarning } from './browser-warning'
-import { Html } from './html'
+import { BrowserWarning } from '@/components/browser-warning.component'
+import { ControlPanel, ControlsProvider } from '@/components/controls'
+import { Html } from '@/components/layout/html.component'
+import { Sidebar } from '@/components/layout/sidebar.component'
 import {
   Education,
   Expertise,
   Interests,
   PersonalDetails,
   ProfessionalExperience,
-} from './sections'
-import { Sidebar } from './sidebar'
+} from '@/components/sections'
 
 export function CV() {
   return (

@@ -1,7 +1,6 @@
+import { useFilterExhaustive, useFilterSkills } from '@/components/utils'
+import { SkillDetail, skills } from '@/content'
 import { ReactNode } from 'react'
-import { SkillDetail, skills, Exhaustive } from '../../content'
-import { useFilterSkills } from '../../use-filter-skills.hook'
-import { useFilterExhaustive } from '../../use-filter-exhaustive.hook'
 
 const selectSkill = (item: SkillDetail) => [item.text]
 const selectVerbose = (item: SkillDetail) => item.exhaustive || null

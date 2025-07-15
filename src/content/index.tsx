@@ -1,6 +1,7 @@
 export * from './desired-position.content'
 export * from './education.content'
 export * from './expertise.content'
+export * from './interests.content'
 export * from './personal-details.content'
 export * from './professional-experience.content'
 export * from './skills.content'

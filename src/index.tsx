@@ -1,5 +1,5 @@
 import { renderToReadableStream } from 'react-dom/server'
-import { CV } from './components/cv'
+import { CV } from './components/cv.component'
 
 const ASSET_DIR = '/assets'
 
