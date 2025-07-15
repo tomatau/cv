@@ -6,7 +6,7 @@ import { useControlsContext } from './use-controls-context'
 export function ControlPanel() {
   const controls = useControlsContext()
   return (
-    <aside className='control-panel'>
+    <aside className='control-panel web-only'>
       <ToggleControl
         id='exhaustive-mode'
         label='Detailed view:'

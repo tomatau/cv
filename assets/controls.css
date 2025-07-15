@@ -22,9 +22,3 @@
     min-height: 30px;
   }
 }
-
-@media print {
-  .controls {
-    display: none;
-  }
-}
