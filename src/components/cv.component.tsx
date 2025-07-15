@@ -1,4 +1,3 @@
-import { BrowserWarning } from '@/components/browser-warning.component'
 import { ControlPanel, ControlsProvider } from '@/components/controls'
 import { Html } from '@/components/layout/html.component'
 import { Sidebar } from '@/components/layout/sidebar.component'
@@ -9,6 +8,7 @@ import {
   PersonalDetails,
   ProfessionalExperience,
 } from '@/components/sections'
+import { BrowserWarning } from '@/components/utils/browser-warning.component'
 
 export function CV() {
   return (
