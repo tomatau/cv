@@ -1,5 +1,5 @@
 @layer layout {
-  .controls {
+  .control-panel {
     grid-area: controls;
     padding: 4px;
     background: #ddd;
@@ -17,8 +17,8 @@
 }
 
 @layer components {
-  .controls > input {
-    width: 14rem;
+  .control-panel .control > input {
+    width: 12rem;
     min-height: 30px;
   }
 }

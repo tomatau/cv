@@ -7,9 +7,7 @@
   .establishment-size {
     color: var(--clr-foreground-active);
     font-size: small;
-    background: oklch(
-      from var(--clr-decoration-muted) calc(l + 0.35) calc(c - 1) h
-    );
+    background: var(--clr-name-background);
     padding: 0 0.4rem;
     border-radius: 5px;
   }
