@@ -9,7 +9,7 @@ export function ControlPanel() {
     <aside className='control-panel'>
       <ToggleControl
         id='exhaustive-mode'
-        label='Exhaustive:'
+        label='Detailed view:'
         checked={controls.exhaustive === Exhaustive.exhaustive}
         onCheckedChange={checked =>
           controls.setExhaustive(

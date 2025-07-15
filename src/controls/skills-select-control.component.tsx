@@ -11,7 +11,7 @@ export function SkillsSelectControl() {
         inputId='skillsFilter'
         isMulti
         options={Object.values(Skills)
-          .sort()
+          .sort((a, b) => a.localeCompare(b))
           .map(skill => ({
             label: skill,
             value: skill,
