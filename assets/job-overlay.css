@@ -1,0 +1,72 @@
+@layer layout {
+  .underlay {
+    position: fixed;
+    top: 2.5rem;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+
+    &.hiding {
+      display: contents;
+    }
+  }
+
+  .job-overlay {
+    margin: 0 auto;
+    box-shadow: 0 0px 2px #444040d6;
+    width: 40rem;
+    margin-top: 2rem;
+  }
+
+  .job-overlay {
+    z-index: 3;
+  }
+
+  .job-overlay {
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: 6px;
+      left: 8px;
+    }
+  }
+}
+
+@layer components {
+  .underlay {
+    background: oklch(from black l c h / 0.8);
+    backdrop-filter: blur(2px);
+  }
+
+  .job-overlay {
+    background: white;
+    padding: 40px;
+
+    h4 {
+      font-size: large;
+    }
+
+    h5 {
+      margin-top: 0.8rem;
+      color: oklch(from currentColor calc(l + 0.3) c h);
+    }
+
+    .close {
+      will-change: transform;
+      transition: transform 300ms;
+
+      &:hover {
+        transform: rotate(180deg);
+        cursor: pointer;
+        color: oklch(from currentColor l calc(c + 0.1) h);
+      }
+    }
+  }
+}
+
+::view-transition-old(.promote) {
+  background-color: white;
+  z-index: 3;
+}

@@ -1,4 +1,4 @@
-import { CV } from '@/components/cv.component'
+import { App } from '@/components/app.component'
 import { renderToReadableStream } from 'react-dom/server'
 
 const ASSET_DIR = '/assets'
@@ -7,7 +7,7 @@ Bun.serve({
   port: 9001,
   routes: {
     '/': async () => {
-      const stream = await renderToReadableStream(<CV />)
+      const stream = await renderToReadableStream(<App />)
 
       return new Response(stream, {
         headers: { 'Content-Type': 'text/html' },

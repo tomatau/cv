@@ -1,7 +1,7 @@
-import { SkillDetail } from './skills.content'
-import { DetailNode, Exhaustive, Period, Skills } from './types'
+import { DetailNode, Exhaustive, Period, SkillDetail, Skills } from './types'
 
-type ProfessionalExperience = {
+export type ProfessionalExperience = {
+  id: string
   exhaustive?: Exhaustive.exhaustive
   period: Period
   role: string
@@ -9,12 +9,15 @@ type ProfessionalExperience = {
     name: string
     location: string
     size?: string
+    about?: string
+    website?: string
   }
   responsibilities: DetailNode[]
   skills: SkillDetail[]
 }
 
 const dendra: ProfessionalExperience = {
+  id: 'dendra',
   period: {
     from: `Apr 2024`,
     to: `Jul 2025`,
@@ -24,6 +27,9 @@ const dendra: ProfessionalExperience = {
     name: 'Dendra',
     location: 'Oxford (remote)',
     size: 'start-up: 50 — 150 staff',
+    website: 'https://www.dendra.io/',
+    about:
+      'Monitoring, protecting and restoring large-scale ecosystems with AI and ultra-high-resolution maps.',
   },
   responsibilities: [
     {
@@ -65,10 +71,10 @@ const dendra: ProfessionalExperience = {
     { text: Skills.bem, exhaustive: Exhaustive.exhaustive },
     { text: Skills.continuousIntegration, exhaustive: Exhaustive.exhaustive },
     { text: Skills.css, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.cypress },
+    { text: Skills.cypress, exhaustive: Exhaustive.exhaustive },
     { text: Skills.designSystems },
     { text: Skills.django },
-    { text: Skills.docker },
+    { text: Skills.docker, exhaustive: Exhaustive.exhaustive },
     { text: Skills.elasticSearch },
     { text: Skills.eventSourcing, exhaustive: Exhaustive.exhaustive },
     { text: Skills.git, exhaustive: Exhaustive.exhaustive },
@@ -81,20 +87,21 @@ const dendra: ProfessionalExperience = {
     { text: Skills.python },
     { text: Skills.redis, exhaustive: Exhaustive.exhaustive },
     { text: Skills.rest, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.rx },
-    { text: Skills.schemaDesign },
+    { text: Skills.rx, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.schemaDesign, exhaustive: Exhaustive.exhaustive },
     { text: Skills.scrum, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.scss },
+    { text: Skills.scss, exhaustive: Exhaustive.exhaustive },
     { text: Skills.sentry, exhaustive: Exhaustive.exhaustive },
     { text: Skills.technicalStrategy },
     { text: Skills.terraform },
-    { text: Skills.typeScript },
+    { text: Skills.typeScript, exhaustive: Exhaustive.exhaustive },
     { text: Skills.ux, exhaustive: Exhaustive.exhaustive },
     { text: Skills.webpack, exhaustive: Exhaustive.exhaustive },
   ],
 }
 
 const beamery: ProfessionalExperience = {
+  id: 'beamery',
   period: {
     from: `Jan 2020`,
     to: `Dec 2023`,
@@ -104,6 +111,9 @@ const beamery: ProfessionalExperience = {
     name: 'Beamery Inc',
     location: 'London',
     size: 'scale-up: 50 — 400 staff',
+    website: 'https://beamery.com/',
+    about:
+      'AI powered PaaS for HR, recruitment, workforce strategy and talent operations.',
   },
   responsibilities: [
     {
@@ -111,16 +121,16 @@ const beamery: ProfessionalExperience = {
       exhaustive: Exhaustive.exhaustive,
     },
     {
-      text: `Leading new Frontend development team of 6 engineers accountable for the new Design System, Multi Language, MFE architecture, A11y and FE tooling, improving scalability and developer efficiency.`,
+      text: `Leading new frontend development enablement team of 6 engineers.`,
     },
     {
-      text: `Leading technical rollout and adoption of the Design System used across 31 projects, saving over 40,000 hours of engineering effort over 2 years.`,
+      text: `Leading technical rollout and adoption of the Design System used across 31 projects, saving over 40,000 hours of effort over 2 years.`,
     },
     {
       text: `Leading technical rollout of WCAG 2.1 AA compliance, a critical aspect of multi million pound contract renewals.`,
     },
     {
-      text: `Leading the cross team "Frontend tribe” for over 26 Frontend engineers and 8 QA engineers - to foster knowledge sharing, and standardisation.`,
+      text: `Leading the cross team "Frontend tribe” for over 26 frontend engineers and 8 QA engineers - to foster knowledge sharing, and standardisation of MFE architecture, multi-anguage, improving scalability and developer efficiency.`,
     },
     {
       text: `Migrating legacy monolithic systems to independently owned services.`,
@@ -132,7 +142,7 @@ const beamery: ProfessionalExperience = {
     { text: Skills.advancedTesting, exhaustive: Exhaustive.exhaustive },
     { text: Skills.aiEngineering },
     { text: Skills.aiIntegrations },
-    { text: Skills.apiDesign, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.apiDesign },
     { text: Skills.architecture, exhaustive: Exhaustive.exhaustive },
     { text: Skills.bash, exhaustive: Exhaustive.exhaustive },
     { text: Skills.continuousIntegration, exhaustive: Exhaustive.exhaustive },
@@ -140,7 +150,7 @@ const beamery: ProfessionalExperience = {
     { text: Skills.css, exhaustive: Exhaustive.exhaustive },
     { text: Skills.cypress, exhaustive: Exhaustive.exhaustive },
     { text: Skills.designSystems },
-    { text: Skills.docker },
+    { text: Skills.docker, exhaustive: Exhaustive.exhaustive },
     { text: Skills.documentation, exhaustive: Exhaustive.exhaustive },
     { text: Skills.elasticSearch, exhaustive: Exhaustive.exhaustive },
     { text: Skills.eventSourcing, exhaustive: Exhaustive.exhaustive },
@@ -168,7 +178,7 @@ const beamery: ProfessionalExperience = {
     { text: Skills.monorepos, exhaustive: Exhaustive.exhaustive },
     { text: Skills.nest, exhaustive: Exhaustive.exhaustive },
     { text: Skills.next },
-    { text: Skills.node },
+    { text: Skills.node, exhaustive: Exhaustive.exhaustive },
     { text: Skills.nx, exhaustive: Exhaustive.exhaustive },
     { text: Skills.observability, exhaustive: Exhaustive.exhaustive },
     { text: Skills.owasp, exhaustive: Exhaustive.exhaustive },
@@ -181,13 +191,13 @@ const beamery: ProfessionalExperience = {
     { text: Skills.rest, exhaustive: Exhaustive.exhaustive },
     { text: Skills.rx, exhaustive: Exhaustive.exhaustive },
     { text: Skills.schemaDesign, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.scrum },
+    { text: Skills.scrum, exhaustive: Exhaustive.exhaustive },
     { text: Skills.sentry, exhaustive: Exhaustive.exhaustive },
     { text: Skills.swagger, exhaustive: Exhaustive.exhaustive },
     { text: Skills.tdd, exhaustive: Exhaustive.exhaustive },
     { text: Skills.technicalStrategy },
     { text: Skills.twilio, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.typeScript },
+    { text: Skills.typeScript, exhaustive: Exhaustive.exhaustive },
     { text: Skills.ux, exhaustive: Exhaustive.exhaustive },
     { text: Skills.vite, exhaustive: Exhaustive.exhaustive },
     { text: Skills.wcag },
@@ -195,6 +205,7 @@ const beamery: ProfessionalExperience = {
 }
 
 const thinkfulWriter: ProfessionalExperience = {
+  id: 'thinkfulWriter',
   period: {
     from: `May 2018`,
     to: `Jan 2020`,
@@ -204,6 +215,9 @@ const thinkfulWriter: ProfessionalExperience = {
     name: 'Thinkful Inc',
     location: 'Remote',
     size: 'start-up: ~200 staff',
+    website: 'https://phoenix.thinkful.com/',
+    about:
+      'Online bootcamp for software engineering, design, data analysis and machine learning.',
   },
   responsibilities: [
     {
@@ -216,10 +230,10 @@ const thinkfulWriter: ProfessionalExperience = {
   ],
 
   skills: [
-    { text: Skills.advancedTesting },
+    { text: Skills.advancedTesting, exhaustive: Exhaustive.exhaustive },
     { text: Skills.continuousIntegration, exhaustive: Exhaustive.exhaustive },
     { text: Skills.css, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.documentation },
+    { text: Skills.documentation, exhaustive: Exhaustive.exhaustive },
     { text: Skills.extremeProg, exhaustive: Exhaustive.exhaustive },
     { text: Skills.functional },
     { text: Skills.git, exhaustive: Exhaustive.exhaustive },
@@ -232,13 +246,14 @@ const thinkfulWriter: ProfessionalExperience = {
     { text: Skills.react },
     { text: Skills.rest },
     { text: Skills.tdd },
-    { text: Skills.technicalWriting, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.technicalWriting },
     { text: Skills.typeScript, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.wcag },
+    { text: Skills.wcag, exhaustive: Exhaustive.exhaustive },
   ],
 }
 
 const just: ProfessionalExperience = {
+  id: 'just',
   exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Nov 2017`,
@@ -249,6 +264,8 @@ const just: ProfessionalExperience = {
     name: 'Just Plc',
     location: 'Reigate',
     size: 'start-up: 12 — 50 staff',
+    website: 'https://www.justgroupplc.co.uk/',
+    about: 'Financial advice, guidance and services for pensioners.',
   },
   responsibilities: [
     {
@@ -294,6 +311,7 @@ const just: ProfessionalExperience = {
 }
 
 const nowtv: ProfessionalExperience = {
+  id: 'nowtv',
   period: {
     from: `Dec 2015`,
     to: `Nov 2017`,
@@ -303,6 +321,8 @@ const nowtv: ProfessionalExperience = {
     name: 'NowTV',
     location: 'Osterley',
     size: 'corp: 600+ staff',
+    website: 'https://www.nowtv.com/',
+    about: 'Subscription-based TV and broadband service owned by Sky.',
   },
   responsibilities: [
     {
@@ -325,11 +345,11 @@ const nowtv: ProfessionalExperience = {
   ],
   skills: [
     { text: Skills.advancedTesting },
-    { text: Skills.akamai },
+    { text: Skills.akamai, exhaustive: Exhaustive.exhaustive },
     { text: Skills.bash, exhaustive: Exhaustive.exhaustive },
     { text: Skills.bem, exhaustive: Exhaustive.exhaustive },
     { text: Skills.cd },
-    { text: Skills.circleCi },
+    { text: Skills.circleCi, exhaustive: Exhaustive.exhaustive },
     { text: Skills.continuousIntegration, exhaustive: Exhaustive.exhaustive },
     { text: Skills.css, exhaustive: Exhaustive.exhaustive },
     { text: Skills.cypress, exhaustive: Exhaustive.exhaustive },
@@ -340,10 +360,10 @@ const nowtv: ProfessionalExperience = {
     { text: Skills.gitHub, exhaustive: Exhaustive.exhaustive },
     { text: Skills.html, exhaustive: Exhaustive.exhaustive },
     { text: Skills.javaScript, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.jenkins },
+    { text: Skills.jenkins, exhaustive: Exhaustive.exhaustive },
     { text: Skills.jira, exhaustive: Exhaustive.exhaustive },
     { text: Skills.mentoring },
-    { text: Skills.mocha },
+    { text: Skills.mocha, exhaustive: Exhaustive.exhaustive },
     { text: Skills.newrelix, exhaustive: Exhaustive.exhaustive },
     { text: Skills.nightwatch, exhaustive: Exhaustive.exhaustive },
     { text: Skills.node, exhaustive: Exhaustive.exhaustive },
@@ -359,12 +379,13 @@ const nowtv: ProfessionalExperience = {
     { text: Skills.sentry, exhaustive: Exhaustive.exhaustive },
     { text: Skills.tdd },
     { text: Skills.ux, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.wcag },
+    { text: Skills.wcag, exhaustive: Exhaustive.exhaustive },
     { text: Skills.webpack, exhaustive: Exhaustive.exhaustive },
   ],
 }
 
 const wizenoze: ProfessionalExperience = {
+  id: 'wizenoze',
   period: {
     from: `Aug 2014`,
     to: `Dec 2015`,
@@ -374,6 +395,8 @@ const wizenoze: ProfessionalExperience = {
     name: 'Wizenoze',
     location: 'Remote',
     size: 'start-up: ~12 staff',
+    website: 'https://www.wizenoze.com/',
+    about: 'Using AI to make educational content more accessible for children.',
   },
   responsibilities: [
     {
@@ -412,7 +435,7 @@ const wizenoze: ProfessionalExperience = {
     { text: Skills.postgreSql },
     { text: Skills.react },
     { text: Skills.redux },
-    { text: Skills.scss },
+    { text: Skills.scss, exhaustive: Exhaustive.exhaustive },
     { text: Skills.tdd },
     { text: Skills.ux, exhaustive: Exhaustive.exhaustive },
     { text: Skills.webpack },
@@ -420,6 +443,7 @@ const wizenoze: ProfessionalExperience = {
 }
 
 const thinkfulLead: ProfessionalExperience = {
+  id: 'thinkfulLead',
   period: {
     from: `Mar 2014`,
     to: `Dec 2015`,
@@ -452,25 +476,26 @@ const thinkfulLead: ProfessionalExperience = {
   ],
   skills: [
     { text: Skills.angular },
-    { text: Skills.css },
+    { text: Skills.css, exhaustive: Exhaustive.exhaustive },
     { text: Skills.documentation, exhaustive: Exhaustive.exhaustive },
     { text: Skills.git, exhaustive: Exhaustive.exhaustive },
     { text: Skills.gitHub, exhaustive: Exhaustive.exhaustive },
     { text: Skills.gulp, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.html },
-    { text: Skills.javaScript },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.javaScript, exhaustive: Exhaustive.exhaustive },
     { text: Skills.jQuery, exhaustive: Exhaustive.exhaustive },
     { text: Skills.karma, exhaustive: Exhaustive.exhaustive },
     { text: Skills.mentoring },
     { text: Skills.owasp },
     { text: Skills.protractor, exhaustive: Exhaustive.exhaustive },
     { text: Skills.react },
-    { text: Skills.tdd },
+    { text: Skills.tdd, exhaustive: Exhaustive.exhaustive },
     { text: Skills.technicalWriting },
   ],
 }
 
 const metail: ProfessionalExperience = {
+  id: 'metail',
   exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Feb 2014`,
@@ -502,7 +527,7 @@ const metail: ProfessionalExperience = {
     { text: Skills.browserCompat },
     { text: Skills.coffee },
     { text: Skills.continuousIntegration, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.html },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
     { text: Skills.less },
     { text: Skills.marionette },
     { text: Skills.scrum },
@@ -510,6 +535,7 @@ const metail: ProfessionalExperience = {
 }
 
 const transversal: ProfessionalExperience = {
+  id: 'transversal',
   period: {
     from: `Sep 2013`,
     to: `Feb 2014`,
@@ -519,6 +545,8 @@ const transversal: ProfessionalExperience = {
     name: 'Transversal',
     location: 'Cambridge',
     size: 'start-up: ~100 staff',
+    about:
+      'AI powered cloud based knowledge for FAQ pages, founded by David MacKay.',
   },
   responsibilities: [
     {
@@ -538,10 +566,10 @@ const transversal: ProfessionalExperience = {
     { text: Skills.backbone },
     { text: Skills.browserCompat },
     { text: Skills.css, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.grunt },
-    { text: Skills.html },
+    { text: Skills.grunt, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
     { text: Skills.javaScript, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.jQuery },
+    { text: Skills.jQuery, exhaustive: Exhaustive.exhaustive },
     { text: Skills.mocha },
     { text: Skills.scrum, exhaustive: Exhaustive.exhaustive },
     { text: Skills.ux, exhaustive: Exhaustive.exhaustive },
@@ -549,6 +577,7 @@ const transversal: ProfessionalExperience = {
 }
 
 const austnews: ProfessionalExperience = {
+  id: 'austnews',
   period: {
     from: `Feb 2012`,
     to: `Apr 2013`,
@@ -572,24 +601,25 @@ const austnews: ProfessionalExperience = {
     },
   ],
   skills: [
-    { text: Skills.apache },
+    { text: Skills.apache, exhaustive: Exhaustive.exhaustive },
     { text: Skills.apiDesign },
     { text: Skills.architecture },
-    { text: Skills.backbone },
+    { text: Skills.backbone, exhaustive: Exhaustive.exhaustive },
     { text: Skills.css, exhaustive: Exhaustive.exhaustive },
     { text: Skills.doctrine },
-    { text: Skills.html },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
     { text: Skills.javaScript, exhaustive: Exhaustive.exhaustive },
-    { text: Skills.jQuery },
+    { text: Skills.jQuery, exhaustive: Exhaustive.exhaustive },
     { text: Skills.marionette },
     { text: Skills.mySql },
-    { text: Skills.owasp },
+    { text: Skills.owasp, exhaustive: Exhaustive.exhaustive },
     { text: Skills.schemaDesign },
     { text: Skills.zend },
   ],
 }
 
 const catalyst: ProfessionalExperience = {
+  id: 'catalyst',
   exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Jan 2012`,
@@ -611,7 +641,7 @@ const catalyst: ProfessionalExperience = {
     },
   ],
   skills: [
-    { text: Skills.apache },
+    { text: Skills.apache, exhaustive: Exhaustive.exhaustive },
     { text: Skills.browserCompat },
     { text: Skills.html, exhaustive: Exhaustive.exhaustive },
     { text: Skills.jQuery },
@@ -621,6 +651,7 @@ const catalyst: ProfessionalExperience = {
 }
 
 const brainWire: ProfessionalExperience = {
+  id: 'brainWire',
   exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Feb 2011`,
@@ -646,15 +677,15 @@ const brainWire: ProfessionalExperience = {
     },
   ],
   skills: [
-    { text: Skills.apache },
+    { text: Skills.apache, exhaustive: Exhaustive.exhaustive },
     { text: Skills.apiDesign },
     { text: Skills.architecture },
     { text: Skills.browserCompat },
-    { text: Skills.css },
-    { text: Skills.html },
+    { text: Skills.css, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
     { text: Skills.javaScript, exhaustive: Exhaustive.exhaustive },
     { text: Skills.jQuery },
-    { text: Skills.mentoring },
+    { text: Skills.mentoring, exhaustive: Exhaustive.exhaustive },
     { text: Skills.mySql },
     { text: Skills.php },
     { text: Skills.schemaDesign },
@@ -662,6 +693,7 @@ const brainWire: ProfessionalExperience = {
 }
 
 const fullPhatDesign: ProfessionalExperience = {
+  id: 'fullPhatDesign',
   exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Apr 2010`,
@@ -686,15 +718,14 @@ const fullPhatDesign: ProfessionalExperience = {
     },
   ],
   skills: [
-    { text: Skills.apache },
+    { text: Skills.apache, exhaustive: Exhaustive.exhaustive },
     { text: Skills.apiDesign },
     { text: Skills.architecture },
     { text: Skills.browserCompat },
-    { text: Skills.css },
-    { text: Skills.html },
+    { text: Skills.css, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
     { text: Skills.javaScript, exhaustive: Exhaustive.exhaustive },
     { text: Skills.jQuery },
-    { text: Skills.mentoring },
     { text: Skills.mySql },
     { text: Skills.php },
     { text: Skills.schemaDesign },
@@ -702,6 +733,7 @@ const fullPhatDesign: ProfessionalExperience = {
 }
 
 const gnb: ProfessionalExperience = {
+  id: 'gnb',
   exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Jul 2009`,
@@ -726,6 +758,7 @@ const gnb: ProfessionalExperience = {
 }
 
 const jda: ProfessionalExperience = {
+  id: 'jda',
   exhaustive: Exhaustive.exhaustive,
   period: {
     from: `Sep 2008`,
@@ -752,13 +785,13 @@ const jda: ProfessionalExperience = {
   ],
 
   skills: [
-    { text: Skills.apache },
+    { text: Skills.apache, exhaustive: Exhaustive.exhaustive },
     { text: Skills.apiDesign },
     { text: Skills.browserCompat },
-    { text: Skills.css },
+    { text: Skills.css, exhaustive: Exhaustive.exhaustive },
     { text: Skills.flash },
-    { text: Skills.html },
-    { text: Skills.javaScript },
+    { text: Skills.html, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.javaScript, exhaustive: Exhaustive.exhaustive },
     { text: Skills.jQuery },
     { text: Skills.mySql },
     { text: Skills.php },

@@ -1,7 +1,7 @@
 import { useControlsContext } from '@/components/controls'
 import { desiredPosition, personalDetails } from '@/content'
 
-export function PersonalDetails() {
+export function PersonalDetailsSection() {
   const controls = useControlsContext()
   return (
     <div className='segment' data-segment='personal-details'>

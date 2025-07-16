@@ -2,7 +2,7 @@ import { NodeList } from '@/components/utils/node-list.component'
 import { expertise } from '@/content'
 import { Lightbulb } from 'lucide-react'
 
-export function Expertise() {
+export function ExpertiseSection() {
   return (
     <div className='segment' data-segment='expertise'>
       <div className='section-group'>
@@ -19,7 +19,7 @@ export function Expertise() {
             <h3 className='dot'>{exp.heading}</h3>
           </div>
           <div className='details'>
-            <NodeList list={exp.details} />
+            <NodeList list={exp.details} showAll={false} />
           </div>
         </div>
       ))}

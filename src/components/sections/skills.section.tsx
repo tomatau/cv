@@ -30,7 +30,7 @@ function SkillGroup({
   )
 }
 
-export function Skills() {
+export function SkillsSection() {
   return (
     <div className='list'>
       <h2>Skills</h2>

@@ -1,5 +1,6 @@
 @layer layout {
   .control-panel {
+    width: var(--page-width);
     grid-area: controls;
     padding: 4px;
     background: #ddd;
@@ -8,6 +9,7 @@
     position: sticky;
     top: 0;
     z-index: 1;
+    height: 2.5rem;
   }
 
   .control {

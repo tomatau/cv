@@ -5,7 +5,7 @@ import { education } from '@/content'
 import { GraduationCap } from 'lucide-react'
 import { useState } from 'react'
 
-export function Education() {
+export function EducationSection() {
   const [showSkills, setShowSkills] = useState(false)
   const filteredEducation = useFilterSkills(
     education,

@@ -2,7 +2,7 @@ import { NodeList } from '@/components/utils/node-list.component'
 import { interests } from '@/content'
 import { Heart } from 'lucide-react'
 
-export function Interests() {
+export function InterestsSection() {
   return (
     <div className='segment' data-segment='personal-interests'>
       <div className='section-group'>

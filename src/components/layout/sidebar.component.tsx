@@ -1,10 +1,5 @@
-import { Skills, Social } from '@/components/sections'
+import { ReactNode } from 'react'
 
-export function Sidebar() {
-  return (
-    <aside className='sidebar'>
-      <Social />
-      <Skills />
-    </aside>
-  )
+export function Sidebar({ children }: { children: ReactNode }) {
+  return <aside className='sidebar'>{children}</aside>
 }

@@ -1,15 +1,21 @@
 import { Skills } from '@/content'
 import Select from 'react-select'
 import { useControlsContext } from './use-controls-context'
+import { useEffect, useRef, useState } from 'react'
 
 export function SkillsSelectControl() {
+  const [body, setBody] = useState<HTMLElement | null>(null)
   const controls = useControlsContext()
+  useEffect(() => {
+    setBody(document.body)
+  }, [])
   return (
     <div className='control'>
       <label htmlFor='skillsFilter'>Skills:</label>
       <Select
         inputId='skillsFilter'
         isMulti
+        menuPortalTarget={body}
         options={Object.values(Skills)
           .sort((a, b) => a.localeCompare(b))
           .map(skill => ({
@@ -77,6 +83,10 @@ export function SkillsSelectControl() {
             ...baseStyles,
             paddingTop: '0px',
             paddingBottom: '0px',
+          }),
+          menuPortal: (baseStyles, state) => ({
+            ...baseStyles,
+            zIndex: 10,
           }),
         }}
       />

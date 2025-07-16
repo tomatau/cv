@@ -1,7 +1,7 @@
 import { personalDetails } from '@/content'
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
 
-export function Social() {
+export function SocialSection() {
   return (
     <>
       <div className='section'>

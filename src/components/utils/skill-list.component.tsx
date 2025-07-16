@@ -4,8 +4,10 @@ import { SkillDetail } from '@/content'
 
 export function SkillList({
   skills = [],
+  showAll = false,
 }: {
   skills: SkillDetail[] | undefined
+  showAll?: boolean
 }) {
   const controls = useControlsContext()
   const filteredExhaustive = useFilterExhaustive(skills)
@@ -18,7 +20,7 @@ export function SkillList({
   )
   return (
     <ul className='inline-list'>
-      {filteredSkills.map(skill => (
+      {(showAll ? skills : filteredSkills).map(skill => (
         <li key={skill.text}>
           <span className='skill'>{skill.text}</span>
         </li>

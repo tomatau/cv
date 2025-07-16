@@ -1,4 +1,4 @@
 import { hydrateRoot } from 'react-dom/client'
-import { CV } from '@/components/cv.component'
+import { App } from '@/components/app.component'
 
-hydrateRoot(document, <CV />)
+hydrateRoot(document, <App />)
