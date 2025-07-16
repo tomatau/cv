@@ -1,14 +1,24 @@
 import { useEffect, useState } from 'react'
 
 export function BrowserWarning() {
-  const [showOverlay, setShowOverlay] = useState(false)
+  const [badBrowser, setBadBrowser] = useState(false)
+  const [badDevice, setBadDevice] = useState(false)
 
   useEffect(() => {
     const isChromium = 'chrome' in window || /Edg\//.test(navigator.userAgent)
-    if (!isChromium) setShowOverlay(true)
+    const isMobile =
+      /Mobi|Android|iPhone|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+        navigator.userAgent
+      )
+    if (!isChromium) {
+      setBadBrowser(true)
+    }
+    if (isMobile) {
+      setBadDevice(true)
+    }
   }, [])
 
-  return showOverlay ? (
+  return badBrowser || badDevice ? (
     <div
       style={{
         position: 'fixed',
@@ -31,12 +41,14 @@ export function BrowserWarning() {
       <h2 style={{ fontSize: '2rem' }}>Unsupported Browser</h2>
       <div style={{ maxWidth: '600px' }}>
         <p style={{ fontSize: '1.2rem', textWrap: 'balance' }}>
-          This CV works best in a Chromium-based browser (such as Chrome, Edge,
-          or Brave).
+          {!badBrowser &&
+            'This CV works best in a Chromium-based browser (such as Chrome, Edge, or Brave) on a laptop or computer.'}
+          {!badDevice && 'This CV is not optimised for mobile'}
         </p>
         <br />
         <p style={{ fontSize: '1.2rem' }}>
-          Please switch to a Chromium browser for the best experience.
+          {!badBrowser &&
+            'Please switch to a Chromium browser on a computer or laptop for the best experience.'}
         </p>
       </div>
     </div>

@@ -18,9 +18,9 @@
   );
 
   /* layout */
-  --page-width: 210mm;
-  --headings-width: 4cm;
-  --sidebar-width: 5.6cm;
+  --page-width: 21cm;
+  --headings-width: calc(var(--page-width) * 0.19);
+  --sidebar-width: calc(var(--page-width) * 0.27);
   --details-width: calc(
     var(--page-width) - (var(--headings-width) + var(--sidebar-width))
   );

@@ -5,7 +5,10 @@ export function Html({ children }: { children: React.ReactNode }) {
     <html lang='en'>
       <head>
         <meta charSet='UTF-8' />
-        <meta name='viewport' content='width=device-width' />
+        <meta
+          name='viewport'
+          content='min-width=device-width, initial-scale=1'
+        />
         <meta
           name='description'
           content={`Curriculum vitae for ${personalDetails.name}, ${desiredPosition.position}`}
