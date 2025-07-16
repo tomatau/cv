@@ -1,13 +1,13 @@
 :root {
   /* colours */
   --clr-container: oklch(1 0 0);
-  --clr-sidebar: oklch(0.94 0 0);
+  --clr-sidebar: oklch(0.96 0 0);
   --clr-foreground: oklch(36% 0.00004 271.152);
   --clr-foreground--ondark: oklch(92% 0.004 271.152);
   --clr-foreground-active: oklch(52% 0.00004 271.152);
   --clr-heading: oklch(44.417% 0.08852 257.745);
   --clr-heading-muted: oklch(from var(--clr-sub-heading) calc(l - 0.05) c h);
-  --clr-sub-heading: oklch(55.875% 0.00336 264.664);
+  --clr-sub-heading: oklch(0.49 0 0);
   --clr-decoration-muted: oklch(62.315% 0.01113 267.341);
   --clr-decoration-pop: oklch(
     from var(--clr-heading) calc(l + 0.2) calc(c + 0.05) h / 0.6
