@@ -1,3 +1,5 @@
+import { Exhaustive } from './types'
+
 export const interests = [
   {
     heading: 'My dog',
@@ -38,6 +40,7 @@ export const interests = [
         text: 'Reading (and trying to understand) philosophy, such as those by Alasdair MacIntyre and Plato.',
       },
     ],
+    exhaustive: Exhaustive.exhaustive,
   },
   {
     heading: 'Cooking',
@@ -46,6 +49,7 @@ export const interests = [
         text: 'Testing the limits of our Ninja Foodi for plant-based whole food meals.',
       },
     ],
+    exhaustive: Exhaustive.exhaustive,
   },
   {
     heading: 'Construction',

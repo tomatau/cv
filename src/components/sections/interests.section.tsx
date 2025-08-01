@@ -1,8 +1,10 @@
 import { NodeList } from '@/components/utils/node-list.component'
 import { interests } from '@/content'
 import { Heart } from 'lucide-react'
+import { useFilterExhaustive } from '../utils'
 
 export function InterestsSection() {
+  const filteredInterests = useFilterExhaustive(interests)
   return (
     <div className='segment' data-segment='personal-interests'>
       <div className='section-group'>
@@ -13,7 +15,7 @@ export function InterestsSection() {
           <Heart size={20} />
         </div>
       </div>
-      {interests.map((interest, idx) => (
+      {filteredInterests.map((interest, idx) => (
         <div className='section decorated' key={idx}>
           <div className='headings'>
             <h3 className='dot'>{interest.heading}</h3>
