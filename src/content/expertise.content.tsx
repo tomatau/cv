@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import { DetailNode, Exhaustive } from './types'
 
 type Expertise = {

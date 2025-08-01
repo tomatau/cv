@@ -108,7 +108,7 @@ export const skills: MySkills = {
     { text: Skills.kanban, exhaustive: Exhaustive.exhaustive },
     { text: Skills.machineLearning, exhaustive: Exhaustive.exhaustive },
     { text: Skills.mentoring, expert: true },
-    { text: Skills.microFrontends, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.microFrontends },
     { text: Skills.microservices },
     { text: Skills.monorepos, exhaustive: Exhaustive.exhaustive },
     { text: Skills.openIdConnect, exhaustive: Exhaustive.exhaustive },
