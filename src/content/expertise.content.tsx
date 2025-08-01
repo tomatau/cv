@@ -60,7 +60,7 @@ export const expertise: Expertise[] = [
     heading: 'Full stack',
     details: [
       {
-        text: '16 years experience in back-end and front-end engineering',
+        text: '16 years experience owning and building back-end and front-end products',
         children: [
           {
             text: 'Designing and building RESTful APIs and Microservices',

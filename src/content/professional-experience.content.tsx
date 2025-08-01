@@ -121,6 +121,12 @@ const beamery: ProfessionalExperience = {
       exhaustive: Exhaustive.exhaustive,
     },
     {
+      text: `Leading the cross team "Frontend tribe” for over 12-26 frontend engineers and 8 QA engineers - to foster knowledge sharing, and standardisation of MFE architecture, multi-anguage, improving scalability and developer efficiency.`,
+    },
+    {
+      text: `Leading technical strategy of micro-frontend (MFE) architecture across 8-16 teams, owning the MFE orchestration platform.`,
+    },
+    {
       text: `Leading new frontend development enablement team of 6 engineers.`,
     },
     {
@@ -128,9 +134,6 @@ const beamery: ProfessionalExperience = {
     },
     {
       text: `Leading technical rollout of WCAG 2.1 AA compliance, a critical aspect of multi million pound contract renewals.`,
-    },
-    {
-      text: `Leading the cross team "Frontend tribe” for over 26 frontend engineers and 8 QA engineers - to foster knowledge sharing, and standardisation of MFE architecture, multi-anguage, improving scalability and developer efficiency.`,
     },
     {
       text: `Migrating legacy monolithic systems to independently owned services.`,
