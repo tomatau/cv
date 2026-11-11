@@ -15,7 +15,7 @@ const noop = () => void 0
 export const initialState = {
   exhaustive: Exhaustive.minimal,
   setExhaustive: noop,
-  position: 'Lead Front-End Engineer',
+  position: 'Tech Lead',
   setPosition: noop,
   skillsFilter: null,
   setSkillsFilter: noop,
