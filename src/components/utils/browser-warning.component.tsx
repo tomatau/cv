@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { usePreventOverflow } from './use-prevent-overflow.hook'
 
 export function BrowserWarning() {
   const [badBrowser, setBadBrowser] = useState(false)
@@ -8,7 +9,7 @@ export function BrowserWarning() {
     const isChromium = 'chrome' in window || /Edg\//.test(navigator.userAgent)
     const isMobile =
       /Mobi|Android|iPhone|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
-        navigator.userAgent
+        navigator.userAgent,
       )
     if (!isChromium) {
       setBadBrowser(true)
@@ -18,7 +19,11 @@ export function BrowserWarning() {
     }
   }, [])
 
-  return badBrowser || badDevice ? (
+  const showWarning = badBrowser || badDevice
+
+  usePreventOverflow({ enabled: showWarning })
+
+  return showWarning ? (
     <div
       style={{
         position: 'fixed',
