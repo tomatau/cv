@@ -66,7 +66,58 @@
   }
 }
 
-::view-transition-old(.promote) {
-  background-color: white;
-  z-index: 3;
+/*
+ * .job-card and .job-card-name are React "share" classes, so they match only
+ * the card that is opening or closing, never the other cards on the page.
+ */
+
+/* The card and its name travel above the backdrop */
+::view-transition-group(.job-card) {
+  z-index: 1;
+  overflow: clip;
+}
+
+::view-transition-group(.job-card-name) {
+  z-index: 2;
+}
+
+/*
+ * React hides the cards it leaves out of a transition with a zero-opacity
+ * animation that outlives the transition, so a later transition of the same
+ * card would stay invisible. Only !important outranks an animation.
+ */
+::view-transition-group(.job-card),
+::view-transition-group(.job-card-name) {
+  opacity: 1 !important;
+}
+
+/* Keep both card snapshots at their natural size, so text is clipped, not stretched */
+::view-transition-old(.job-card),
+::view-transition-new(.job-card) {
+  height: 100%;
+  object-fit: none;
+  object-position: top left;
+}
+
+/* The page behind switches to its new state at once instead of cross-fading */
+:root:active-view-transition-type(job-open)::view-transition-old(root),
+:root:active-view-transition-type(job-close)::view-transition-old(root) {
+  display: none;
+}
+
+:root:active-view-transition-type(job-open)::view-transition-new(root),
+:root:active-view-transition-type(job-close)::view-transition-new(root) {
+  animation: none;
+}
+
+/* The white overlay stays solid in flight: it fades in early on open and out late on close */
+:root:active-view-transition-type(job-open)::view-transition-old(.job-card),
+:root:active-view-transition-type(job-open)::view-transition-new(.job-card) {
+  animation-duration: 100ms;
+}
+
+:root:active-view-transition-type(job-close)::view-transition-old(.job-card),
+:root:active-view-transition-type(job-close)::view-transition-new(.job-card) {
+  animation-delay: 150ms;
+  animation-duration: 100ms;
 }

@@ -16,6 +16,7 @@ import {
   startTransition,
   useContext,
   useState,
+  unstable_addTransitionType as addTransitionType,
   unstable_ViewTransition as ViewTransition,
 } from 'react'
 
@@ -47,16 +48,29 @@ export function JobOverlay() {
   const experience = professionalExperience.find(
     exp => exp.id === context.overlay
   )!
-  const close = () => startTransition(() => context.setOverlay(null))
+  const close = () =>
+    startTransition(() => {
+      addTransitionType('job-close')
+      context.setOverlay(null)
+    })
   return (
     <ViewTransition name={`job-${experience.id}-underlay`}>
-      <div className='underlay' onClick={() => close()}>
-        <ViewTransition name={`job-${experience.id}`} default='promote'>
+      <div
+        className='underlay'
+        onClick={e => {
+          e.stopPropagation()
+          close()
+        }}
+      >
+        <ViewTransition name={`job-${experience.id}`} share='job-card'>
           <div className='job-overlay' onClick={e => e.stopPropagation()}>
             <X className='close' onClick={() => close()} />
             <h4>{experience.role}</h4>
             <p className='establishment'>
-              <ViewTransition name={`job-${experience.id}-name`}>
+              <ViewTransition
+                name={`job-${experience.id}-name`}
+                share='job-card-name'
+              >
                 <span className='establishment-name'>
                   {experience.establishment.name}
                 </span>
@@ -104,6 +118,44 @@ export function JobOverlay() {
   )
 }
 
+function EstablishmentLine({
+  experience,
+  named,
+}: {
+  experience: ProfessionalExperience
+  named: boolean
+}) {
+  const name = (
+    <span className='establishment-name'>{experience.establishment.name}</span>
+  )
+  return (
+    <p className='establishment'>
+      {named ? (
+        <ViewTransition
+          name={`job-${experience.id}-name`}
+          share='job-card-name'
+        >
+          {name}
+        </ViewTransition>
+      ) : (
+        name
+      )}
+      &raquo;
+      <span className='establishment-location'>
+        {experience.establishment.location}
+      </span>
+      {experience.establishment.size && (
+        <>
+          &raquo;
+          <span className='establishment-size'>
+            {experience.establishment.size}
+          </span>
+        </>
+      )}
+    </p>
+  )
+}
+
 function ProfessionalExperienceItem({
   experience,
   showResponsibilities,
@@ -114,15 +166,29 @@ function ProfessionalExperienceItem({
   showSkills: boolean
 }) {
   const context = useContext(JobOverlayContext)
+  const isOpen = context.overlay === experience.id
+  const open = () => {
+    if (isOpen) return
+    startTransition(() => {
+      addTransitionType('job-open')
+      context.setOverlay(experience.id)
+    })
+  }
 
-  if (context.overlay === experience.id) return <JobOverlay />
+  const summary = (
+    <>
+      <h4>{experience.role}</h4>
+      <EstablishmentLine experience={experience} named={!isOpen} />
+      {showResponsibilities && <NodeList list={experience.responsibilities} />}
+      {showSkills && <SkillList skills={experience.skills} />}
+    </>
+  )
 
   return (
     <div
-      className='section decorated interactive'
-      key={experience.id}
+      className={`section decorated ${isOpen ? '' : 'interactive'}`}
       role='button'
-      onClick={() => startTransition(() => context.setOverlay(experience.id))}
+      onClick={open}
     >
       <div className='headings'>
         <h3 className='with-dot'>
@@ -133,38 +199,23 @@ function ProfessionalExperienceItem({
           {experience.period.to ?? 'Present'}
         </h3>
       </div>
-      <ViewTransition name={`job-${experience.id}-underlay`}>
-        <div className='underlay hiding'>
-          <ViewTransition name={`job-${experience.id}`}>
-            <div className='details'>
-              <h4>{experience.role}</h4>
-              <p className='establishment'>
-                <ViewTransition name={`job-${experience.id}-name`}>
-                  <span className='establishment-name'>
-                    {experience.establishment.name}
-                  </span>
-                </ViewTransition>
-                &raquo;
-                <span className='establishment-location'>
-                  {experience.establishment.location}
-                </span>
-                {experience.establishment.size && (
-                  <>
-                    &raquo;
-                    <span className='establishment-size'>
-                      {experience.establishment.size}
-                    </span>
-                  </>
-                )}
-              </p>
-              {showResponsibilities && (
-                <NodeList list={experience.responsibilities} />
-              )}
-              {showSkills && <SkillList skills={experience.skills} />}
-            </div>
-          </ViewTransition>
-        </div>
-      </ViewTransition>
+      {isOpen ? (
+        <>
+          {/* A static copy keeps the row filled while the card is in the overlay */}
+          <div className='details placeholder' aria-hidden>
+            {summary}
+          </div>
+          <JobOverlay />
+        </>
+      ) : (
+        <ViewTransition name={`job-${experience.id}-underlay`}>
+          <div className='underlay hiding'>
+            <ViewTransition name={`job-${experience.id}`} share='job-card'>
+              <div className='details'>{summary}</div>
+            </ViewTransition>
+          </div>
+        </ViewTransition>
+      )}
     </div>
   )
 }
