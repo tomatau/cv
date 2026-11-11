@@ -1,4 +1,5 @@
 import { DetailNode, Exhaustive } from './types'
+import { formatYears, yearsAcross, yearsSince } from './years-across'
 
 type Expertise = {
   heading: string
@@ -10,8 +11,16 @@ export const expertise: Expertise[] = [
     heading: 'Leadership',
     details: [
       {
-        text: '4 years experience as a department principal engineer',
+        text: `${formatYears(yearsAcross(['framer', 'beamery']))} experience as a tech lead, including ${yearsAcross(['beamery'])} as a department principal engineer`,
         children: [
+          {
+            text: 'Leading a team of 10 engineers in a Series D unicorn',
+            exhaustive: Exhaustive.exhaustive,
+          },
+          {
+            text: 'Owning billing, plans and the AI credit platform',
+            exhaustive: Exhaustive.exhaustive,
+          },
           {
             text: 'Enabling over 40 engineers in delivery teams',
             exhaustive: Exhaustive.exhaustive,
@@ -36,7 +45,7 @@ export const expertise: Expertise[] = [
         ],
       },
       {
-        text: '6 years as a professional full-stack mentor',
+        text: `${formatYears(yearsAcross(['thinkfulLead', 'thinkfulWriter']))} as a professional full-stack mentor`,
         children: [
           {
             text: 'Writing curriculum and running office hours for 100s of students',
@@ -59,7 +68,7 @@ export const expertise: Expertise[] = [
     heading: 'Full stack',
     details: [
       {
-        text: '16 years experience owning and building back-end and front-end products',
+        text: `${formatYears(yearsSince('jda'))} experience owning and building back-end and front-end products`,
         children: [
           {
             text: 'Designing and building RESTful APIs and Microservices',
@@ -77,7 +86,7 @@ export const expertise: Expertise[] = [
     heading: 'Web operations',
     details: [
       {
-        text: '14 years experience in web application delivery',
+        text: `${formatYears(yearsSince('jda'))} experience in web application delivery`,
         children: [
           {
             text: 'Deploying, continuous integration and monitoring',
