@@ -130,7 +130,7 @@ function ProfessionalExperienceItem({
           <br />
           &mdash;
           <br />
-          {experience.period.to}
+          {experience.period.to ?? 'Present'}
         </h3>
       </div>
       <ViewTransition name={`job-${experience.id}-underlay`}>
