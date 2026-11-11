@@ -16,6 +16,61 @@ export type ProfessionalExperience = {
   skills: SkillDetail[]
 }
 
+const framer: ProfessionalExperience = {
+  id: 'framer',
+  period: {
+    from: `Sep 2025`,
+  },
+  role: 'Tech Lead',
+  establishment: {
+    name: 'Framer',
+    location: 'Remote',
+    size: 'scale-up: 50 — 400 staff',
+    website: 'https://www.framer.com/',
+    about:
+      'Web builder of choice for professionals to design, publish and scale marketing sites.',
+  },
+  responsibilities: [
+    {
+      text: `Leading a team of 10 engineers within a Series D unicorn start-up, guiding the team through 50% ARR growth.`,
+    },
+    {
+      text: `Owning the billing and plans infrastructure and flows.`,
+    },
+    {
+      text: `Owning the AI credit platform used in the agentic release.`,
+    },
+    {
+      text: `Building systems for AI integrations, billing, forms, phishing and spam incident handling, and analytics features such as A/B testing.`,
+      exhaustive: Exhaustive.exhaustive,
+    },
+  ],
+  skills: [
+    { text: Skills.abTesting, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.aiEngineering },
+    { text: Skills.aiIntegrations },
+    { text: Skills.apiDesign },
+    { text: Skills.architecture },
+    { text: Skills.aws, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.axiom, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.bash, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.bigQuery, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.crossFunctionalLead },
+    { text: Skills.css, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.docker, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.golang, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.mentoring, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.newrelix, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.node },
+    { text: Skills.postgreSql, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.react },
+    { text: Skills.redis, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.sentry, exhaustive: Exhaustive.exhaustive },
+    { text: Skills.technicalStrategy },
+    { text: Skills.typeScript },
+  ],
+}
+
 const dendra: ProfessionalExperience = {
   id: 'dendra',
   period: {
@@ -803,6 +858,7 @@ const jda: ProfessionalExperience = {
 }
 
 export const professionalExperience = [
+  framer,
   dendra,
   beamery,
   thinkfulWriter,
