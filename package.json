@@ -11,12 +11,12 @@
     "@types/bun": "^1.2.18",
     "bun-types": "^1.2.18",
     "lucide-react": "^0.577.0",
-    "react": "^0.0.0-experimental-97cdd5d3-20250710",
-    "react-dom": "^0.0.0-experimental-97cdd5d3-20250710",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "react-select": "^5.10.2"
   },
   "devDependencies": {
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6"
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0"
   }
 }
