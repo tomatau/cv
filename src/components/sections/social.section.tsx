@@ -1,5 +1,6 @@
 import { personalDetails } from '@/content'
-import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
+import { GithubIcon, LinkedinIcon } from '@/components/utils/brand-icons.component'
+import { Mail, MapPin, Phone } from 'lucide-react'
 
 export function SocialSection() {
   return (
@@ -38,7 +39,7 @@ export function SocialSection() {
       </div>
       <div className='section'>
         <div className='headings'>
-          <Linkedin size={16} />
+          <LinkedinIcon size={16} />
         </div>
         <div className='details'>
           <p>
@@ -50,7 +51,7 @@ export function SocialSection() {
       </div>
       <div className='section'>
         <div className='headings'>
-          <Github size={16} />
+          <GithubIcon size={16} />
         </div>
         <div className='details'>
           <p>
