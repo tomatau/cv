@@ -1,4 +1,3 @@
-/// <reference types="react/experimental" />
 import { ToggleControl, useControlsContext } from '@/components/controls'
 import { useFilterExhaustive, useFilterSkills } from '@/components/utils'
 import { NodeList } from '@/components/utils/node-list.component'
@@ -16,8 +15,8 @@ import {
   startTransition,
   useContext,
   useState,
-  unstable_addTransitionType as addTransitionType,
-  unstable_ViewTransition as ViewTransition,
+  addTransitionType,
+  ViewTransition,
 } from 'react'
 
 const NUM_ITEMS_TO_SHOW_RESPONSIBILITIES = 2
